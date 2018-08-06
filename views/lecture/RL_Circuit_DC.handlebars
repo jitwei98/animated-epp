@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+	<title>RC Circuit</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+	<!-- Your custom styles (optional) -->
+	<link href="css/style.min.css" rel="stylesheet">
+
+	<!-- GeoGebra API -->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+		<link rel="stylesheet" type="text/css" href="node_modules/intro.js/introjs.css">
+	<script type="text/javascript" src="node_modules/intro.js/intro.js"></script>
+
+	<style type=text/css>
+	svg{
+		display: block;
+		margin: auto;
+	}
+
+	#ggb {
+		display: block;
+		margin: auto;
+	}
+
+	#slide_lecture, #lecture_pg2 { /* or use classes */
+		display: none;
+	}
+
+	img {
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);
+	}
+
+</style>
+</head>
+
+<body>
+
+	<!--Main Navigation-->
+	<header>
+
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark primary-color scrolling-navbar">
+			<div class="container">
+
+				<!-- Brand -->
+				<a class="navbar-brand waves-effect" href="index.html" >
+					<strong class="white-text" data-step='1' data-intro='Homepage'>Animated EPP</strong>
+				</a>
+
+				<!-- Collapse -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- hidden with .collapse -->
+                        <li class="nav-item active collapse">
+                            <a class="nav-link" href="#">Topics
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <!--./hidden with .collapse -->
+
+                        <!-- TODO: Do better for smaller screen -->
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Topics
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/lecture/ohms_law">Ohm's Law</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/lecture/RLC_circuit_DC">RLC Circuit(DC)</a>
+                                <a class="dropdown-item" href="/lecture/RLC_circuit">RLC Circuit(AC)</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/lecture/filter_index">Filter</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/posts/quiz">Quizzes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li>
+                    </ul>
+                </div>
+
+		</div>
+	</nav>
+	<!-- Navbar -->
+
+</header>
+<!--Main Navigation-->
+
+
+
+<!--Main layout-->
+<main class="mt-5 pt-5">
+	<div class="container">
+		<section class="mb-4">
+
+			<!-- Grid row -->
+			<div class="row">
+
+				<!-- Grid column -->
+				<div class="col-md-7 mb-3">
+
+					<div class="view overlay z-depth-1-half">
+						<div id='ggb' data-step='4' data-intro="This changes will be reflect on graph "></div>
+					</div>
+
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-5 mb-3">
+
+					<div class="view overlay z-depth-1-half">
+						<!-- <iframe> -->
+							<!-- TODO: find out some way to determine the size of the object wrt to the child instead of hard-coding -->
+							<!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
+
+							<!-- TODO: Pagination (display current page number) -->
+							<div id="slide_lecture">
+								<!-- Card -->
+								<div class="card" height="100%" width="100%">
+									<!-- Card image -->
+									<img class="card-img-top" src="not_ohms_law.png" brightness="0.5" alt="Card image cap">
+
+									<!-- Card content -->
+									<div id="lecture_pg1" class="card-body">
+
+										<!-- Title -->
+										<h4 class="card-title"><a>Energy Storage</a></h4>
+
+										<!-- Text -->
+										<p class="card-text">
+											<ul>
+												<li><p class="card-text">When a capacitor gets charged, the energy is stored in its electric field</p></li>
+												<li><p class="card-text">The stored energy can be expressed in terms of the work done in moving the charges to set up the field</p></li>
+											</ul>
+
+										</p>
+										
+										<!-- Button -->
+										<a href="#" class="btn btn-primary">prev</a>
+										<!-- Button -->
+										<a href="#"id="next-btn-test" class="btn btn-primary float-right">next</a>
+
+									</div>
+
+									<!-- Card content -->
+									<div id="lecture_pg2" class="card-body">
+
+										<!-- Title -->
+										<h4 class="card-title"><a>Capacitor’s Energy Equation</a></h4>
+
+										<!-- Text -->
+										<!-- <p class="card-text">                  TODO: better equation markdown, like MATHJAX                      -->
+											<ul>
+												<li><p class="card-text">Recall: voltage is a measure of the energy transferred (work done) per unit charge</p></li>
+												<li><p class="card-text">Hence, work done in moving charge from one plate to another: <br /><div align="center"><i>dw = v dq</i></div></p></li>
+												<li><p class="card-text">For a capacitor that already has voltage , the stored charge is: <br /><div align="center"><i>W = QV</i></div></p></li>
+												<li><p class="card-text">Hence, work done to attain Q is <div align="center"><i>W = 1/2 CV^2</i></div></p></li>
+											</ul>
+
+										</p>
+										<!-- Button -->
+										<a href="#" id="prev-btn-test" class="btn btn-primary">prev</a>
+										<!-- Button -->
+										<a href="#" class="btn btn-primary float-right">next</a>
+
+									</div>
+
+								</div>
+								<!-- Card -->
+							</div>
+
+							<div id="slide_circuit">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="412" height="467.6756756756757" viewBox="10 0 185 210"><title></title><style type="text/css">
+#g1 circle.pindot {fill: none;stroke: none;pointer-events: fill;}#g1 rect, #g1 circle, #g1 ellipse, #g1 polyline, #g1 line, #g1 polygon, #g1 path {shape-rendering: crispEdges;}path, polyline, polygon {stroke-linejoin:round;}
+rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges;}
+</style>
+<rect x="10" y="0" width="185" height="210" fill="#FFFFFF" stroke="none"/><g id="g1" c_spiceCmd="null" c_para="Prefix Start`1`" importFlag="0" c_portOfADImportHack="" c_transformList="" xmlns="http://www.w3.org/2000/svg"><g c_origin="95,35" c_para="package`AXIAL-0.3`nameAlias`Value(&#x3a9;)`BOM_Manufacturer Part`?`spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`" c_partid="part_import_gge194" id="gge194" c_shapetype="group" c_etype="pinpart" ><g c_partid="part_annotation" id="gge196" ><text c_note="note_name" x="89.03125" y="27" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >1k</text></g><g c_partid="part_annotation" id="gge198" ><text c_note="note_pre" x="89.0390625" y="18.0078125" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >R1</text></g><polyline points="110 35 107 40" stroke="#A00000" id="gge200" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline points="102 30 97 40" stroke="#A00000" id="gge201" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline points="107 40 102 30" stroke="#A00000" id="gge202" stroke-width="1"   fill="none" stroke-linecap="round" /><g c_partid="part_pin" c_etype="pinpart"  c_show="show"  c_elec="0" c_spicepin="2" c_origin="115,35" id="gge203" c_rotation="0"><circle c_pindot="true" class="pindot" cx="115" cy="35" r="2" fill="#4F4F4F" stroke="none" /><path d="M 115 35 h -5" fill="none" stroke="#800" stroke-width="1"/><text x="106" y="35" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="end" display="none"  >2</text><text x="114" y="31" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="start" display="none"  >2</text><circle cx="113" cy="35" r="3" stroke="#800" fill="none" stroke-width="1" display="none" /><path d="M 110 32 L 107 35 L 110 38" fill="none" stroke="#800" stroke-width="1"  display="none" /></g><polyline points="88 40 83 30" stroke="#A00000" id="gge210" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline points="97 40 93 30" stroke="#A00000" id="gge211" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline points="93 30 88 40" stroke="#A00000" id="gge212" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline points="83 30 80 35" stroke="#A00000" id="gge213" stroke-width="1"   fill="none" stroke-linecap="round" /><g c_partid="part_pin" c_etype="pinpart"  c_show="show"  c_elec="0" c_spicepin="1" c_origin="75,35" id="gge214" c_rotation="180"><circle c_pindot="true" class="pindot" cx="75" cy="35" r="2" fill="#4F4F4F" stroke="none" /><path d="M 75 35 h 5" fill="none" stroke="#800" stroke-width="1"/><text x="84" y="35" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="start" display="none"  >1</text><text x="76" y="31" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="end" display="none"  >1</text><circle cx="77" cy="35" r="3" stroke="#800" fill="none" stroke-width="1" display="none" /><path d="M 80 38 L 83 35 L 80 32" fill="none" stroke="#800" stroke-width="1"  display="none" /></g></g><polyline c_etype="wire" c_shapetype="line" points="145 125 145 175 50 175 50 125" stroke="#008800" id="gge224" stroke-width="1"   fill="none" stroke-linecap="round" /><rect id="gge229" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="none" c_shapetype="line"  /><g c_origin="50,105" c_para="package`HDR1X2`nameAlias`Value`BOM_Manufacturer Part`?`spicePre`V`spiceSymbolName`Vsin`" c_partid="part_import_gge231" id="gge231" c_shapetype="group" c_etype="pinpart" ><g c_partid="part_annotation" id="gge233" ><text c_note="note_name" x="62" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >SIN(0 1 50) AC 1 0</text></g><g c_partid="part_annotation" id="gge235" ><text c_note="note_pre" x="62" y="108.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >V1</text></g><ellipse cx="50" cy="105" rx="10" ry="10" id="gge237" stroke="#880000" stroke-width="1" fill="none"   /><g c_partid="part_pin" c_etype="pinpart"  c_show="show"  c_elec="0" c_spicepin="1" c_origin="50,85" id="gge238" c_rotation="90"><circle c_pindot="true" class="pindot" cx="50" cy="85" r="2" fill="#4F4F4F" stroke="none" /><path d="M 50 95 v -10" fill="none" stroke="#800" stroke-width="1"/><text x="50" y="97" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="end" display="none" transform="rotate(270,50,97)" >1</text><text x="46" y="91" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="start" display="none" transform="rotate(270,46,91)" >1</text><circle cx="50" cy="72" r="3" stroke="#800" fill="none" stroke-width="1" display="none" /><path d="M 47 75 L 50 78 L 53 75" fill="none" stroke="#800" stroke-width="1"  display="none" /></g><polyline points="48 99 52 99" stroke="#880000" id="gge245" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline points="50 97 50 101" stroke="#880000" id="gge246" stroke-width="1"   fill="none" stroke-linecap="round" /><g c_partid="part_pin" c_etype="pinpart"  c_show="show"  c_elec="0" c_spicepin="2" c_origin="50,125" id="gge247" c_rotation="270"><circle c_pindot="true" class="pindot" cx="50" cy="125" r="2" fill="#4F4F4F" stroke="none" /><path d="M 50 115 v 10" fill="none" stroke="#800" stroke-width="1"/><text x="50" y="111" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="start" display="none" transform="rotate(270,50,111)" >2</text><text x="46" y="119" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="end" display="none" transform="rotate(270,46,119)" >2</text><circle cx="50" cy="138" r="3" stroke="#800" fill="none" stroke-width="1" display="none" /><path d="M 53 135 L 50 132 L 47 135" fill="none" stroke="#800" stroke-width="1"  display="none" /></g><polyline points="52 111 48 111" stroke="#880000" id="gge254" stroke-width="1"   fill="none" stroke-linecap="round" /></g><polyline c_etype="wire" c_shapetype="line" points="115 35 145 35 145 85" stroke="#008800" id="gge282" stroke-width="1"   fill="none" stroke-linecap="round" /><polyline c_etype="wire" c_shapetype="line" points="75 35 50 35 50 85" stroke="#008800" id="gge285" stroke-width="1"   fill="none" stroke-linecap="round" /><g c_origin="145,105" c_para="package`AXIAL-0.4`nameAlias`Value(H)`BOM_Manufacturer Part`?`spicePre`L`spiceSymbolName`Inductor_AXIAL-0.4_US`" c_partid="part_import_gge287" id="gge287" c_shapetype="group" c_etype="pinpart" c_rotation="270"><g c_partid="part_annotation" id="gge289" ><text c_note="note_name" x="151.328125" y="117" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >1m</text></g><g c_partid="part_annotation" id="gge291" ><text c_note="note_pre" x="151.33" y="108.01" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >L1</text></g><g c_partid="part_pin" c_etype="pinpart"  c_show="show"  c_elec="0" c_spicepin="2" c_origin="145,125" id="gge293" c_rotation="270"><circle c_pindot="true" class="pindot" cx="145" cy="125" r="2" fill="#4F4F4F" stroke="none" /><path d="M 145 125 v -3" fill="none" stroke="#800" stroke-width="1"/><text x="145" y="118" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="start" display="none" transform="rotate(270,145,118)" >2</text><text x="141" y="126" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="end" display="none" transform="rotate(270,141,126)" >2</text><circle cx="145" cy="125" r="3" stroke="#800" fill="none" stroke-width="1" display="none" /><path d="M 148 122 L 145 119 L 142 122" fill="none" stroke="#800" stroke-width="1"  display="none" /></g><g c_partid="part_pin" c_etype="pinpart"  c_show="show"  c_elec="0" c_spicepin="1" c_origin="145,85" id="gge300" c_rotation="90"><circle c_pindot="true" class="pindot" cx="145" cy="85" r="2" fill="#4F4F4F" stroke="none" /><path d="M 145 85 v 3" fill="none" stroke="#800" stroke-width="1"/><text x="145" y="92" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="end" display="none" transform="rotate(270,145,92)" >1</text><text x="141" y="84" font-family="Verdana" font-size="7pt" fill="#800" text-anchor="start" display="none" transform="rotate(270,141,84)" >1</text><circle cx="145" cy="85" r="3" stroke="#800" fill="none" stroke-width="1" display="none" /><path d="M 142 88 L 145 91 L 148 88" fill="none" stroke="#800" stroke-width="1"  display="none" /></g><path d="M 145.068 88.117 A 3.9 4 0 1 1 145.064 96.082" id="gge307"   stroke="#880000" stroke-width="1" c_helper_type="arc1" fill="none" /><path d="M 145.071 96.6 A 3.9 4 0 1 1 145.066 104.565" id="gge308"   stroke="#880000" stroke-width="1" c_helper_type="arc1" fill="none" /><path d="M 145.071 105.067 A 3.9 4 0 1 1 145.066 113.032" id="gge309"   stroke="#880000" stroke-width="1" c_helper_type="arc1" fill="none" /><path d="M 145.069 113.7 A 3.9 4 0 1 1 145.064 121.665" id="gge310"   stroke="#880000" stroke-width="1" c_helper_type="arc1" fill="none" /></g><g c_partid="part_junction" c_etype="pinpart" c_origin="145,130" id="gge311" c_shapetype="group"><circle c_pindot="true" class="pindot" cx="145" cy="130" r="2" fill="#4F4F4F" stroke="none"/><circle cx="145" cy="130" r="2.5" fill="#CC0000" stroke-width="1"/></g></g></svg>
+<!-- </iframe> -->
+<!-- tab nav -->
+<ul class="nav nav-tabs text-white bg-danger">
+	<!-- TODO: add .active to the <a> for the selected tab -->
+		<!-- TODO: figure out a better id since this is not button -->
+		<li class="nav-item">
+			<a id="lecture-btn" class="nav-link" href="#" data-step='8' data-intro='Change to lecture mode'>Lecture</a>
+			<!-- <button class="btn btn-primary" type="button">Lecture</button> -->
+		</li>
+		<li class="nav-item">
+			<a id="playground-btn" class="nav-link active" href="#" data-step='9' data-intro='Change to Playground mode'>Playground</a>
+		</li>
+
+	</ul>
+</div>
+</div>
+<!-- Grid column -->
+
+</div>
+<!-- Grid row -->
+</section>
+
+<section class="mb-4">
+	<!-- Grid row -->
+	<div class="row">
+
+		<!-- Grid column -->
+		<div class="col-md-7 mb-3">
+
+			<div class="view overlay z-depth-1-half">
+				<h4>Graph control panel <small>(will be placed in the graph)</small></h4>
+	<!-- 			Voltage:<input id="Vol" type="number" value="0" min="0" max="100" />
+				Resistance:<input id="Res" type="number" value="0" min="0" max="100" />
+				<p>Capacitance: <input id="Cap" type="number" value="0" min="0" max="100" /></p> -->
+
+				<!-- TODO: better id instead of "Vol", "Res" and "Cur" -->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-primary text-white" id="basic-addon1">Voltage</span>
+					</div>
+					<input id="Vol" type="text" class="form-control" placeholder="V" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-primary text-white" id="basic-addon1">Resistance</span>
+					</div>
+					<input id="Res" type="text" class="form-control" placeholder="&#8486" aria-label="Username" aria-describedby="basic-addon1">
+				</div>	
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-primary text-white" id="basic-addon1">Inductance</span>
+					</div>
+					<input id="Ind" type="text" class="form-control" placeholder="C" aria-label="Username" aria-describedby="basic-addon1">
+				</div>	
+
+				<button id="DischargeButton" data-step='10' data-intro='Click here to show or unshow Voltage/Capacitor/Resistor Curve'>Discharge</button>
+				<button id="ChargingButton">Charge</button>
+				<button id="a1">T=RC</button><button id="a5">T=5RC</button>
+				<a href="javascript:void(0);" onclick="javascript:startTour();">Show me how</a>
+				<script type="text/javascript" src ="/js/lecture/RL_circuit_DC.js"></script>
+			</div>
+
+		</div>
+		<!-- Grid column -->
+
+		<!-- Grid column -->
+		<div class="col-md-5 mb-3">
+
+			<div class="view overlay z-depth-1-half">
+				<div class="jumbotron">
+					<p class="lead">Reserved for further contents</p>
+				</div>
+				<div style="display: none">
+					<h4>Buttons</h4>
+					<button id="my-element" class="btn btn-primary" type="button">Lecture</button>
+					<button id="my-other-element" class="btn btn-primary" type="button">Playground</button>
+					<button class="btn btn-primary" type="button">Prev</button>
+					<button class="btn btn-primary" type="button">Next</button>
+				</div>
+			</div>
+
+		</div>
+		<!-- Grid column -->
+
+		<!-- Grid column -->
+		<div class="col-md-4 mb-3">
+
+			<div class="view overlay z-depth-1-half" id="dynamic-display1">
+				<!-- <iframe src=""></iframe> -->
+				<div>
+					<!-- <link rel="import" href="helloworld.html"> -->
+				</div>
+			</div>
+
+		</div>
+		<!-- Grid column -->
+
+	</div>
+	<!-- Grid row -->
+</section>
+
+
+<!--bookmark-->
+
+
+<!--Section: Jumbotron-->
+<section class="card wow fadeIn collapse" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg);">
+
+	<!-- Content -->
+	<div class="collapse card-body text-white text-center py-5 px-5 my-5">
+
+		<h1 class="mb-4">
+			<strong>Random Jumbotron to <br />fill up screen space for now</strong>
+		</h1>
+
+		<a target="_blank" href="#" class="btn btn-outline-white btn-lg">Linked to this website
+			<i class="fa fa-graduation-cap ml-2"></i>
+		</a>
+
+	</div>
+	<!-- Content -->
+</section>
+<!--Section: Jumbotron-->
+
+</div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+
+	<hr class="my-4">
+
+	<!-- Social icons -->
+	<div class="pb-4">
+		<a href="https://www.facebook.com/" target="_blank">
+			<i class="fa fa-facebook mr-3"></i>
+		</a>
+
+		<a href="https://twitter.com/" target="_blank">
+			<i class="fa fa-twitter mr-3"></i>
+		</a>
+
+		<a href="https://www.youtube.com/" target="_blank">
+			<i class="fa fa-youtube mr-3"></i>
+		</a>
+
+		<a href="https://plus.google.com/" target="_blank">
+			<i class="fa fa-google-plus mr-3"></i>
+		</a>
+
+		<a href="https://dribbble.com/" target="_blank">
+			<i class="fa fa-dribbble mr-3"></i>
+		</a>
+	</div>
+	<!-- Social icons -->
+
+	<!--Copyright-->
+	<div class="footer-copyright py-3">
+		© 2018 Copyright:
+		<a href="#" target="_blank">something.com</a>
+	</div>
+	<!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+<!--Skadoosh-->
+<script type="text/javascript"></script>
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+
+    <!-- Dynamic Display JS code -->
+    <script type="text/javascript">
+		// displayLecture();
+		window.onload = function() {
+
+			document.getElementById('lecture-btn').onclick = function() {
+				displayLecture();
+			};
+
+			document.getElementById('playground-btn').onclick = function() {
+				displayCircuit();
+			};
+
+			document.querySelector('#next-btn-test').onclick = testNextPg;
+			document.querySelector('#prev-btn-test').onclick = testPrevPg;
+		};
+
+		function displayLecture() {
+			document.querySelector('#slide_circuit').style.display = 'none';
+			document.querySelector('#slide_lecture').style.display = 'block';
+		}
+
+		function displayCircuit() {
+			document.querySelector('#slide_lecture').style.display = 'none';
+			document.querySelector('#slide_circuit').style.display = 'block';
+		}
+
+		// TODO: Should be changed to nextPg(currentPg)
+		// TODO: if current is alr 1st pg disable prev button
+		// TODO: bind keyboard
+		function testNextPg() {
+			document.querySelector('#lecture_pg1').style.display = 'none';
+			document.querySelector('#lecture_pg2').style.display = 'block';
+		}
+		function testPrevPg() {
+			document.querySelector('#lecture_pg2').style.display = 'none';
+			document.querySelector('#lecture_pg1').style.display = 'block';
+		}
+
+	</script>
+	<script>
+		function startTour() {
+			var tour = introJs()
+			tour.setOption('tooltipPosition', 'auto');
+			tour.setOption('positionPrecedence', ['left', 'right', 'top', 'bottom']);
+			tour.start();
+		}
+		startTour();
+	
+	</script>
+</body>
+
+</html>

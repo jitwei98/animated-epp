@@ -1,0 +1,22 @@
+<h1> Create Post</h1>
+{{#each errors}}
+    <div class="alert alert-danger">{{message}}</div>
+{{/each}}
+<form action="/admin/posts/create" method="post" enctype="multipart/form-data">
+
+
+    <div class="form-group">
+        <label for="question"> Question</label>
+        <input name="question" type="text" class="form-control" id="question" placeHolder="Enter Question" >
+    </div>
+    <div class="form-group">
+        <label for="answer"> Answer(Cannot be zero)</label>
+        <input name="answer" type="text" class="form-control" id="title" placeHolder="Enter Answer" >
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Create Post</button>
+</form>
