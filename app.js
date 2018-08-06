@@ -12,6 +12,8 @@ const {mongoDbUrl} = require('./config/database');
 const passport = require('passport');
 const Handlebars = require('handlebars');
 const intro = require('intro.js');
+
+
 mongoose.promiose = global.Promise;
 mongoose.connect(mongoDbUrl)
     .then(db=>{

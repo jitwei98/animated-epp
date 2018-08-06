@@ -96,239 +96,48 @@ router.delete('/:id',(req,res)=>{
 router.get('/quiz',(req,res)=>{
 
     Post.find({}).then(posts=>{
-
+       // res.status(200);
         res.render('admin/posts/quiz',{posts:posts,list,question,TotalMark:posts.length});
+       // res.end();
 
     });
 
 });
 router.post('/quiz',(req,res)=>{
     let errors =[];
-    let ans = req.body.Question0;
-    let text = req.body.quesionArray;
+    //let ans = req.body.Question0;
+    let text = req.body.questionArr;
+    //console.log(text);
     let arr = text.split(",");
     let count =0;
     let out ='';
+    let ansArr ='';
     Post.find({}).then(posts=>{
 
         ans = req.body.Question0;
         out += ans;
-
-        if(ans == posts[arr[0]].answer){
-            count ++;
-
-        }else{
-            errors.push({message:`Question:${posts[arr[0]].question} is wrong \n
-             Answer : ${posts[arr[0]].answer}`});
-        }
-        if(posts.length>1){
-            ans = req.body.Question1;
-            out += ans;
-            if(ans == posts[arr[1]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[1]].question} is wrong \n
-             Answer : ${posts[arr[1]].answer}`});
-            }
-        }
-        if(posts.length>2){
-            ans = req.body.Question2;
-            out += ans;
-            if(ans == posts[arr[2]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[2]].question} is wrong \n
-             Answer : ${posts[arr[2]].answer}`});
-            }
-        }
-        if(posts.length>3){
-            ans = req.body.Question3;
-            out += ans;
-            if(ans == posts[arr[3]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[3]].question} is wrong \n
-             Answer : ${posts[arr[3]].answer}`});
-            }
-        }
-        if(posts.length>4){
-            ans = req.body.Question4;
-            out += ans;
-            if(ans == posts[arr[4]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[4]].question} is wrong \n
-             Answer : ${posts[arr[4]].answer}`});
-            }
-        }
-        if(posts.length>5){
-            ans = req.body.Question5;
-            out += ans;
-            if(ans == posts[arr[5]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[5]].question} is wrong \n
-             Answer : ${posts[arr[5]].answer}`});
-            }
-        }
-        if(posts.length>6){
-            ans = req.body.Question6;
-            out += ans;
-            if(ans == posts[arr[6]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[6]].question} is wrong \n
-             Answer : ${posts[arr[6]].answer}`});
-            }
-        }
-        if(posts.length>7){
-            ans = req.body.Question7;
-            out += ans;
-            if(ans == posts[arr[7]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[7]].question} is wrong \n
-             Answer : ${posts[arr[7]].answer}`});
-            }
-        }
-        if(posts.length>8){
-            ans = req.body.Question8;
-            out += ans;
-            if(ans == posts[arr[8]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[8]].question} is wrong \n
-             Answer : ${posts[arr[8]].answer}`});
-            }
-        }
-        if(posts.length>9){
-            ans = req.body.Question9;
-            out += ans;
-            if(ans == posts[arr[9]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[9]].question} is wrong \n
-             Answer : ${posts[arr[9]].answer}`});
-            }
-        }
-        if(posts.length>10){
-            ans = req.body.Question10;
-            out += ans;
-            if(ans == posts[arr[10]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[10]].question} is wrong \n
-             Answer : ${posts[arr[10]].answer}`});
-            }
-        }
-        if(posts.length>11){
-            ans = req.body.Question11;
-            out += ans;
-            if(ans == posts[arr[11]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[11]].question} is wrong \n
-             Answer : ${posts[arr[11]].answer}`});
-            }
-        }
-        if(posts.length>12){
-            ans = req.body.Question12;
-            out += ans;
-            if(ans == posts[arr[12]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[12]].question} is wrong \n
-             Answer : ${posts[arr[12]].answer}`});
-            }
-        }
-        if(posts.length>13){
-            ans = req.body.Question13;
-            out += ans;
-            if(ans == posts[arr[13]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[13]].question} is wrong \n
-             Answer : ${posts[arr[13]].answer}`});
-            }
-        }
-        if(posts.length>14){
-            ans = req.body.Question14;
-            out += ans;
-            if(ans == posts[arr[14]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[14]].question} is wrong \n
-             Answer : ${posts[arr[14]].answer}`});
-            }
-        }
-        if(posts.length>15){
-            ans = req.body.Question15;
-            out += ans;
-            if(ans == posts[arr[15]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[15]].question} is wrong \n
-             Answer : ${posts[arr[15]].answer}`});
-            }
-        }
-        if(posts.length>16){
-            ans = req.body.Question16;
-            out += ans;
-            if(ans == posts[arr[16]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[16]].question} is wrong \n
-             Answer : ${posts[arr[16]].answer}`});
-            }
-        }
-        if(posts.length>17){
-            ans = req.body.Question17;
-            out += ans;
-            if(ans == posts[arr[17]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[17]].question} is wrong \n
-             Answer : ${posts[arr[17]].answer}`});
-            }
-        }
-        if(posts.length>18){
-            ans = req.body.Question18;
-            out += ans;
-            if(ans == posts[arr[18]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[18]].question} is wrong \n
-             Answer : ${posts[arr[18]].answer}`});
-            }
-        }
+        var qesLen;
         if(posts.length>19){
-            ans = req.body.Question19;
-            out += ans;
-            if(ans == posts[arr[19]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[19]].question} is wrong \n
-             Answer : ${posts[arr[19]].answer}`});
-            }
+            qesLen = 20;
+        }else{
+            qesLen = posts.length;
         }
-        if(posts.length>20){
-            ans = req.body.Question20;
-            out += ans;
-            if(ans == posts[arr[20]].answer){
-                count ++;
-            }else{
-                errors.push({message:`Question:${posts[arr[20]].question} is wrong \n
-             Answer : ${posts[arr[20]].answer}`});
-            }
+        for(let i=0;i<qesLen;i++){
+            ansArr += posts[arr[i]].answer;
+            ansArr +=',';
         }
-        res.render('admin/posts/quiz',{posts:posts,list,question,count:count,errors:errors,TotalMark:posts.length,});
+        //res.status(200);
+        res.send(ansArr);
+        //        // res.render("empty",{posts:posts,list,question,count:count,TotalMark:qesLen,ansArr :ansArr});
+        //       //  res.end();
         //res.send(`${ans} , ${arr[0]} ${posts[0].answer}`);
 
     });
 
 
-
 });
+
+
 
 
 module.exports = router;

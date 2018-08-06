@@ -40,9 +40,9 @@ module.exports = {
                 ran =  randChose(ans);
                 var ID = i*10+j;
                 if (ranOrder == j){
-                    out +="<div class='form-group' id="+ ID +"><label> <input type='radio' value='"+ ans +"'"+ "name =Question"+ i +">"+ ans+ "ans"+ "</label></div>"
+                    out +="<div class='form-group' id=Q"+ ID + "><label> <input type='radio' id="+ ID + " value='"+ ans +"'"+ "name =Question"+ i +">"+ ans+ "ans"+  "</label></div>"
                 }else{
-                    out +="<div class='form-group' id="+ ID +"><label> <input type='radio'value='"+ ran +"'"+ "name =Question"+ i +">"+ ran + "</label></div>"
+                    out +="<div class='form-group' id=Q"+ ID + "><label> <input type='radio' id="+ ID + " value='"+ ran +"'"+ "name =Question"+ i +">"+ ran + "</label></div>"
                 }
             }
             out += "</div></div></div>";
@@ -50,6 +50,7 @@ module.exports = {
         }
         out += '<div class="form-group"   style="display:none;" ><input type="text" name="quesionArray" cols="30" rows="10" class="form-control" id="quesionArray" value= '
             + questionTracker.join(",") + '></div>';
+
         return out ;
     },
 

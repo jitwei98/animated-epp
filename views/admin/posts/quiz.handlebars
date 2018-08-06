@@ -6,13 +6,13 @@
 </div>
 <button id="previous">Previous Question</button>
 <button id="next">Next Question</button>
-<form  href="javascript:void(0)" action="/admin/posts/quiz" method="post" enctype="multipart/form-data" name="FORM">
+<form   >
     {{#question posts}}
         {{question}}
     {{/question}}
 
-    Mark : {{count}} / {{TotalMark}}
-    <button id="submit" type="submit" onclick="answerKey(); ">Submit Quiz</button>
+    <div id="Mark"></div>
+
     {{#each errors}}
         <div class="alert alert-danger alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -20,10 +20,56 @@
         </div>
     {{/each}}
 
+    <button id="submit"  type="submit">Submit Quiz</button>
 </form>
-<div class="pagination" id="pagination">
 
-</div>
+<div class="pagination" id="pagination"></div>
+<div id="testing">sdf</div>
+<div id="testing2"></div>
+<script>
+    $('#submit').on('click',(event)=>{
+        event.preventDefault();
+        event.stopPropagation();
+        document.getElementById('testing').innerHTML= "hello";
+        var mark =0;
+        $.ajax({
+            url: '/admin/posts/quiz',
+            type:'POST',
+            contentType:'application/json',
+            data: JSON.stringify({"questionArr": $("#quesionArray").val()}),
+            success:function (res) {
+                let arr = res.split(",");
+                for(let i=0;i<{{TotalMark}};i++){
+                    for(let j=0;j<4;j++){
+                        var ID = i*10+j;
+                        var qID = 'Q' + ID;
+                        var pID = 'p' + i;
+                        if(document.getElementById(ID).value == arr[i]){
+                            document.getElementById(qID).style.backgroundColor  = 'lightgreen';
+                        }
+                        if(document.getElementById(ID).checked){
+                            if(document.getElementById(ID).value == arr[i]){
+                                mark ++;
+                            }else{
+                                document.getElementById(qID).style.backgroundColor  = 'red';
+                                document.getElementById(pID).style.backgroundColor  = 'red';
+                            }
+                        }
+                    }
+                }
+            },
+
+        }).done(()=>{
+            document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
+        });
+
+    });
+    // function answerKey() {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     document.getElementById('answerArr').value=5;
+    // }
+</script>
 <script>
 
 
@@ -32,7 +78,7 @@
         out += "<a href=\"#\">&laquo;</a>";
         for(let i=0;i<{{TotalMark}};i++){
             var ind = i+1;
-            out += "<a href=\"#\" onclick='showSlide("+i+")'>"+ind+"</a>"
+            out += "<a href=\"#\" id=p"+ i +" onclick='showSlide("+i+")'>"+ind+"</a>"
         }
         out += "<a href=\"#\">&raquo;</a>"
         document.getElementById('pagination').innerHTML = out;
