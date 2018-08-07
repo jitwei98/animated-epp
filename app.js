@@ -74,12 +74,15 @@ app.use((req,res,next)=>{
 const home = require('./routes/home/index');
 const admin = require('./routes/admin/index');
 const posts = require('./routes/admin/posts');
-const lecture = require('./routes/lectures/index')
+const lecture = require('./routes/lectures/index');
+const quizLanding = require('./routes/admin/quiz');
 //use routes
 app.use('/',home);
-app.use('/admin',admin);
-app.use('/admin/posts',posts);
+app.use('/admin/:id',admin);
+app.use('/admin/posts/:id',posts);
+//app.use('/admin/posts',posts);
 app.use('/lecture',lecture);
+app.use('/quiz_landing',quizLanding);
 
 var port = process.env.port || 3000;
 app.listen(port,()=>{

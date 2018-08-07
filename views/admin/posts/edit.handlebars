@@ -1,16 +1,24 @@
 <h1> Edit Question</h1>
 
-<form action="/admin/posts/edit/{{post.id}}?_method=PUT" method="post" enctype="multipart/form-data">
+<form action="/admin/posts/{{UserId}}/edit/{{post.id}}?_method=PUT" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="question"> Question</label>
-        <input name="question" type="text" class="form-control" id="question" placeHolder="Enter Question" >
+        <input name="question" type="text" class="form-control" id="question" value={{post.question}} >
     </div>
     <div class="form-group">
         <label for="answer"> Answer</label>
-        <input name="answer" type="text" class="form-control" id="title" placeHolder="Enter Answer" >
+        <input name="answer" type="text" class="form-control" id="answer" value={{post.answer}}>
     </div>
-
+    <div class="form-group">
+        <label for="category"> Category</label>
+        <select name="category" id="category" class="form-control">
+            <option value="RLC_Circuit">RLC circuit</option>
+            <option value="ohmLaw">Ohm's Law</option>
+            <option value="filter">filter</option>
+            <option value="TEC">Thevenin Equivalent Circuit</option>
+        </select>
+    </div>
 
 
 

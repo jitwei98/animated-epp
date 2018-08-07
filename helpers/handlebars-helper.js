@@ -48,6 +48,7 @@ module.exports = {
             out += "</div></div></div>";
 
         }
+        out += "<div class='slide' id='answerPage'>This is the Summery page</div>"
         out += '<div class="form-group"   style="display:none;" ><input type="text" name="quesionArray" cols="30" rows="10" class="form-control" id="quesionArray" value= '
             + questionTracker.join(",") + '></div>';
 

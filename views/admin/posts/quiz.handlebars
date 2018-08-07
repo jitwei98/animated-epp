@@ -6,12 +6,12 @@
 </div>
 <button id="previous">Previous Question</button>
 <button id="next">Next Question</button>
-<form   >
+<form>
     {{#question posts}}
         {{question}}
     {{/question}}
 
-    <div id="Mark"></div>
+    <div id="Mark"  style="display:none;"></div>
 
     {{#each errors}}
         <div class="alert alert-danger alert-dismissible">
@@ -22,18 +22,17 @@
 
     <button id="submit"  type="submit">Submit Quiz</button>
 </form>
+<button id="checkAnswer">Check you answer</button>
 
 <div class="pagination" id="pagination"></div>
-<div id="testing">sdf</div>
-<div id="testing2"></div>
+
 <script>
     $('#submit').on('click',(event)=>{
         event.preventDefault();
         event.stopPropagation();
-        document.getElementById('testing').innerHTML= "hello";
         var mark =0;
         $.ajax({
-            url: '/admin/posts/quiz',
+            url: '/admin/posts/{{UserId}}/quiz',
             type:'POST',
             contentType:'application/json',
             data: JSON.stringify({"questionArr": $("#quesionArray").val()}),
@@ -60,7 +59,9 @@
             },
 
         }).done(()=>{
+            showSlide(slides.length-1);
             document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
+            document.getElementById('Mark').style.display ="inline-block";
         });
 
     });
@@ -94,16 +95,25 @@
 
         if (currentSlide === 0) {
             previousButton.style.display = "none";
+            checkAnswer.style.display = 'none';
         } else {
             previousButton.style.display = "inline-block";
+            checkAnswer.style.display = 'none';
         }
 
-        if (currentSlide === slides.length - 1) {
+        if (currentSlide === slides.length - 2) {
             nextButton.style.display = "none";
             submitButton.style.display = "inline-block";
-        } else {
+            checkAnswer.style.display = 'none';
+        }else if(currentSlide === slides.length - 1){
+            nextButton.style.display = "none";
+            previousButton.style.display = "none";
+            submitButton.style.display = "none";
+            checkAnswer.style.display ="inline-block";
+        }else {
             nextButton.style.display = "inline-block";
             submitButton.style.display = "none";
+            checkAnswer.style.display = 'none';
         }
     }
 
@@ -114,16 +124,20 @@
     function showPreviousSlide() {
         showSlide(currentSlide - 1);
     }
-
+    function firstSlide() {
+        showSlide(0);
+    }
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
     const slides = document.querySelectorAll(".slide");
+    const checkAnswer = document.getElementById("checkAnswer");
     let currentSlide = 0;
 
     showSlide(0);
 
     // on submit, show results
     //submitButton.addEventListener("click", showResults);
+    checkAnswer.addEventListener('click',firstSlide);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
 </script>
