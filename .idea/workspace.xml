@@ -347,12 +347,12 @@
       <workItem from="1533545222685" duration="18803000" />
       <workItem from="1533607114449" duration="21235000" />
       <workItem from="1533657244335" duration="156000" />
-      <workItem from="1533723269334" duration="626000" />
+      <workItem from="1533723269334" duration="669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176540000" />
+    <option name="totallyTimeSpent" value="176583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -363,7 +363,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50033045" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.2996812" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49966952" weight="0.2996812" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32905984" />
       <window_info id="Favorites" order="0" side_tool="true" />
