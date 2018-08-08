@@ -477,6 +477,7 @@
                         <button id="CapacitanceButton">Capacitance</button>
                         <button id="startButton">start</button>
                         <button id="OriginButton">Origin</button>
+                        <button onclick="startTour()">start Tour</button>
                         <script type="text/javascript" src ="/js/lecture/RC_Circuit.js"></script>
                     </div>
 
@@ -543,6 +544,7 @@
         <!--Section: Jumbotron-->
 
     </div>
+    <div id="result">this is testing</div>
 </main>
 <!--Main layout-->
 
@@ -610,7 +612,6 @@
     window.onload = function() {
 
         // call the function to start Intro JS tour
-        startTour();
 
         document.getElementById('lecture-btn').onclick = function() {
             displayLecture();
@@ -654,7 +655,28 @@
         tour.setOption('tooltipPosition', 'auto');
         tour.setOption('positionPrecedence', ['left', 'right', 'top', 'bottom']);
         tour.start();
+
     }
+
+
+    // and check for it when deciding whether to start.
+    window.addEventListener('load', function () {
+        var doneTour = localStorage.getItem('EventTour') === 'Completed';
+        if (doneTour) {
+            return;
+        }
+        else {
+            startTour();
+
+            introguide.oncomplete(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+
+            introguide.onexit(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+        }
+    });
     // startTour();
 </script>
 
