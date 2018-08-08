@@ -18,18 +18,62 @@
             {{message}}
         </div>
     {{/each}}
-    <div  class="form-group" ><input type="text" cols="30" rows="10" class="form-control" name="questionBank" id='questionBank' value='{{questionBank}}'></div>
-    <button id="submit"  type="submit">Submit Quiz</button>
+    <div  class="form-group" style="display:none;" ><input type="text" cols="30" rows="10" class="form-control" name="questionBank" id='questionBank' value='{{questionBank}}'></div>
+    <!--<button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button>-->
+
+
 </form>
+<button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button>
 <button id="checkAnswer">Check you answer</button>
 
 <div class="pagination" id="pagination"></div>
 
 
+
+<div class="modal fade" id="emptyQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">You have not answered all the questions. Are you sure you want to end the quiz?</div>
+            <div class="modal-footer">
+                <div><a class="btn btn-primary" type="button" data-dismiss="modal" onclick="checkBackEnd();" >Yes</a></div>
+                <div><a class="btn btn-secondary" type="button" data-dismiss="modal">No</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+    // $('#testing').on('click',(event)=>{
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    // });
+    // $('#submit').on('click',(event)=>{
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    // });
     $('#submit').on('click',(event)=>{
-        event.preventDefault();
-        event.stopPropagation();
+        let count =0;
+        for(let i=0;i<{{TotalMark}};i++){
+            for(let j=0;j<4;j++){
+                var ID = i*10+j;
+                if(document.getElementById(ID).checked){
+                    count ++;
+                }
+            }
+        }
+        if(count === {{TotalMark}}){
+            $('#submit').removeAttr('data-toggle');
+            $('#submit').removeAttr('data-target');
+            checkBackEnd();
+            console.log('hi')
+        }else{
+            console.log('no')
+        }
+    });
+    function checkBackEnd() {
+        //event.preventDefault();
+        //event.stopPropagation();
+
         var mark =0;
         $.ajax({
             url: '/quiz_landing/answer',
@@ -68,24 +112,21 @@
             document.getElementById('Mark').style.display ="inline-block";
         });
 
-    });
-    // function answerKey() {
-    //     event.preventDefault();
-    //     event.stopPropagation();
-    //     document.getElementById('answerArr').value=5;
-    // }
+    }
+
 </script>
+
 <script>
 
 
     function dynamicPage(){
         var out ="";
-        out += "<a href=\"#\">&laquo;</a>";
+        out += "<a href=\"#\" onclick='showPreviousSlide();'>&laquo;</a>";
         for(let i=0;i<{{TotalMark}};i++){
             var ind = i+1;
             out += "<a href=\"#\" id=p"+ i +" onclick='showSlide("+i+")'>"+ind+"</a>"
         }
-        out += "<a href=\"#\">&raquo;</a>"
+        out += "<a href=\"#\" onclick='showNextSlide();'>&raquo;</a>"
         document.getElementById('pagination').innerHTML = out;
     }
     dynamicPage();

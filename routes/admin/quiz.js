@@ -41,7 +41,11 @@ router.post('/',(req,res)=>{
             // console.log(posts.length);
             // console.log('question:')
             // console.log(posts);
-            res.render('admin/posts/quiz_user',{posts:posts,question,TotalMark:req.body.questionNo,questionBank:questionBank});
+            let totalMark = req.body.questionNo;
+            if(totalMark>posts.length){
+                totalMark= posts.length;
+            }
+            res.render('admin/posts/quiz_user',{posts:posts,question,TotalMark:totalMark,questionBank:questionBank});
         }else{
             console.log('no question');
             res.render('home/index');
