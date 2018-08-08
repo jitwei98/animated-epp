@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">Animated Epp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,11 +7,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home
+                <!-- hidden with .collapse -->
+                <li class="nav-item active collapse">
+                    <a class="nav-link" href="#">Topics
                         <span class="sr-only">(current)</span>
                     </a>
+                </li>
+                <!--./hidden with .collapse -->
+
+                <!-- TODO: Do better for smaller screen -->
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Topics
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/lecture/ohms_law">Ohm's Law</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">RC Circuit (DC)</a>
+                        <a class="dropdown-item" href="#">RL Circuit (DC)</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">RC Circuit (AC)</a>
+                        <a class="dropdown-item" href="#">RL Circuit (AC)</a>
+                        <a class="dropdown-item" href="#">RLC Circuit in Series</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/lecture/filter_index">High Pass Filter</a>
+                        <a class="dropdown-item" href="/lecture/filter_index">Low Pass Filter</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz_landing">Quizzes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
@@ -18,7 +44,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/register">Register</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/posts/{{id}}" id="admin" >Admin</a>
+                </li>
             </ul>
         </div>
     </div>
