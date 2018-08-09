@@ -3,6 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="13b37b30-f45a-4b19-8dc6-a73b5d3dc9d3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/lectures/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/lectures/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home/index.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/home/index.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/lecture.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/lecture.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/Ohms_law.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/Ohms_law.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/RC_Circuit_DC.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/RC_Circuit_DC.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/RC_circuit.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/RC_circuit.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/RLC_series_Circuit.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/RLC_series_Circuit.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/RL_Circuit.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/RL_Circuit.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/RL_Circuit_DC.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/RL_Circuit_DC.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lecture/low_pass_filter.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/low_pass_filter.handlebars" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,38 +27,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="985">
+            <state relative-caret-position="1428">
               <caret line="84" column="22" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quiz.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/admin/quiz.js">
+      <file leaf-file-name="lecture.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/layouts/lecture.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="-85">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quiz_user.handlebars" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/posts/quiz_user.handlebars">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/lectures/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quiz-helper.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helpers/quiz-helper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="104" selection-start-line="38" selection-start-column="104" selection-end-line="38" selection-end-column="144" />
+            <state relative-caret-position="527">
+              <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -108,20 +110,10 @@
         <option value="$PROJECT_DIR$/views/lecture/RC_circuit.html" />
         <option value="$PROJECT_DIR$/public/js/lecture/RL_circuit.js" />
         <option value="$PROJECT_DIR$/views/lecture/RLC_series_Circuit.html" />
-        <option value="$PROJECT_DIR$/views/layouts/lecture.handlebars" />
-        <option value="$PROJECT_DIR$/routes/lectures/index.js" />
         <option value="$PROJECT_DIR$/views/lecture/index.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/Ohms_law.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/RC_Circuit_DC.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/RL_Circuit_DC.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" />
         <option value="$PROJECT_DIR$/views/lecture/index_filter.handlebars" />
         <option value="$PROJECT_DIR$/views/lecture/index_RLC.handlebars" />
         <option value="$PROJECT_DIR$/views/lecture/index_RLC_DC.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/low_pass_filter.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/RLC_series_Circuit.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/RL_Circuit.handlebars" />
-        <option value="$PROJECT_DIR$/views/lecture/RC_circuit.handlebars" />
         <option value="$PROJECT_DIR$/public/js/quiz/quiz.js" />
         <option value="$PROJECT_DIR$/views/empty.handlebars" />
         <option value="$PROJECT_DIR$/views/home/login.handlebars" />
@@ -140,7 +132,6 @@
         <option value="$PROJECT_DIR$/views/admin/posts/create.handlebars" />
         <option value="$PROJECT_DIR$/views/admin/posts/edit.handlebars" />
         <option value="$PROJECT_DIR$/views/admin/posts/index.handlebars" />
-        <option value="$PROJECT_DIR$/views/home/index.handlebars" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/admin/posts/quiz_landingPage.handlebars" />
         <option value="$PROJECT_DIR$/views/admin/posts/quiz.handlebars" />
@@ -149,6 +140,17 @@
         <option value="$PROJECT_DIR$/helpers/quiz-helper.js" />
         <option value="$PROJECT_DIR$/routes/admin/quiz.js" />
         <option value="$PROJECT_DIR$/views/admin/posts/quiz_user.handlebars" />
+        <option value="$PROJECT_DIR$/views/home/index.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/low_pass_filter.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/Ohms_law.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/RC_circuit.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/RC_Circuit_DC.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/RL_Circuit.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/RL_Circuit_DC.handlebars" />
+        <option value="$PROJECT_DIR$/views/lecture/RLC_series_Circuit.handlebars" />
+        <option value="$PROJECT_DIR$/views/layouts/lecture.handlebars" />
+        <option value="$PROJECT_DIR$/routes/lectures/index.js" />
       </list>
     </option>
   </component>
@@ -182,95 +184,52 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="lectures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="lecture" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,11 +307,12 @@
       <workItem from="1533607114449" duration="21235000" />
       <workItem from="1533657244335" duration="156000" />
       <workItem from="1533723269334" duration="669000" />
+      <workItem from="1533788016529" duration="2179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176583000" />
+    <option name="totallyTimeSpent" value="178762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -384,40 +344,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/lecture/index_RLC_DC.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/low_pass_filter.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="69" column="60" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/Ohms_law.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pic/RLC_Circuit.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pic/low_pass_filter_SVG.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/index.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/lecture/index_filter.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -425,43 +351,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/lecture.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="60" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/RLC_series_Circuit.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="468" column="38" selection-start-line="468" selection-start-column="38" selection-end-line="468" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/RC_circuit.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8143">
-          <caret line="479" column="73" selection-start-line="479" selection-start-column="73" selection-end-line="479" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/intro.js/themes/introjs-dark.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/RL_Circuit.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="460" column="38" selection-start-line="460" selection-start-column="38" selection-end-line="460" selection-end-column="38" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/finalhandler/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -567,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/home.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
@@ -622,13 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/index.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="215" column="32" selection-start-line="215" selection-start-column="32" selection-end-line="215" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -688,13 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/quiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/posts/quiz_user.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -702,10 +572,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/home.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/quiz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/index.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="866">
+          <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/Ohms_law.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="354" lean-forward="true" selection-start-line="354" selection-end-line="354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/low_pass_filter.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/RC_circuit.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="489" lean-forward="true" selection-start-line="489" selection-end-line="489" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/RC_Circuit_DC.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/RL_Circuit.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="532" lean-forward="true" selection-start-line="532" selection-end-line="532" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/RL_Circuit_DC.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/RLC_series_Circuit.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="546" lean-forward="true" selection-start-line="546" selection-end-line="546" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/index.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="58" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="985">
+        <state relative-caret-position="1428">
           <caret line="84" column="22" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/lecture.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/lectures/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
         </state>
       </provider>
     </entry>
