@@ -183,14 +183,14 @@ window.onmousemove = function(e) {
     } else if (component === 2) {
 		// TODO: different suffix
 		y += (deltaY /= 100);
-		y = y > 1000 ? 1000 : y;
+		y = y > 100 ? 100 : y;
 		y = y < 1 ? 1 : y;
 		resistor.textContent = Math.round(y) + 'k';
 		document.getElementById("Res").value = Math.round(y);
 	}
 };
 
-gge229.onmouseup = function() {
+window.onmouseup = function() {
 	component = 0;
 };
 
