@@ -1,14 +1,13 @@
-
 <body>
 
 {{>lecture/home-nav}}
 
-
-
-<!--Main layout-->
-<main class="mt-5 pt-5">
 	<div class="container">
 		<section class="mb-4">
+			<!-- Page Heading -->
+			<h1 class="my-4">
+				DC Transient - Capacitor
+			</h1>
 
 			<!-- Grid row -->
 			<div class="row">
@@ -35,9 +34,6 @@
 							<div id="slide_lecture">
 								<!-- Card -->
 								<div class="card" height="100%" width="100%">
-									<!-- Card image -->
-									<img class="card-img-top" src="not_ohms_law.png" brightness="0.5" alt="Card image cap">
-
 									<!-- Card content -->
 									<div id="lecture_pg1" class="card-body">
 
@@ -54,9 +50,9 @@
 										</p>
 										
 										<!-- Button -->
-										<a href="#" class="btn btn-primary">prev</a>
+										<a href="#" class="btn btn-primary">PREV</a>
 										<!-- Button -->
-										<a href="#"id="next-btn-test" class="btn btn-primary float-right">next</a>
+										<a href="#"id="next-btn-test" class="btn btn-primary float-right">NEXT</a>
 
 									</div>
 
@@ -306,15 +302,15 @@ Sorry, your browser does not support inline SVG.
 </div>
 <!-- </iframe> -->
 <!-- tab nav -->
-<ul class="nav nav-tabs text-white bg-danger">
+<ul class="nav nav-tabs bg-primary">
 	<!-- TODO: add .active to the <a> for the selected tab -->
 		<!-- TODO: figure out a better id since this is not button -->
 		<li class="nav-item">
-			<a id="lecture-btn" class="nav-link" href="#" data-step='8' data-intro='Change to lecture mode'>Lecture</a>
+			<a id="lecture-btn" class="nav-link text-white" href="#" data-step='8' data-intro='Change to lecture mode'>Lecture</a>
 			<!-- <button class="btn btn-primary" type="button">Lecture</button> -->
 		</li>
 		<li class="nav-item">
-			<a id="playground-btn" class="nav-link active" href="#" data-step='9' data-intro='Change to Playground mode'>Playground</a>
+			<a id="playground-btn" class="nav-link text-white" href="#" data-step='9' data-intro='Change to Playground mode'>Playground</a>
 		</li>
 
 	</ul>
@@ -344,19 +340,28 @@ Sorry, your browser does not support inline SVG.
 					<div class="input-group-prepend">
 						<span class="input-group-text bg-primary text-white" id="basic-addon1">Voltage</span>
 					</div>
-					<input id="Vol" type="text" class="form-control" placeholder="V" aria-label="Username" aria-describedby="basic-addon1">
+					<input id="Vol" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+					<div class="input-group-append">
+						<span class="input-group-text">V</span>
+					</div>					
 				</div>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text bg-primary text-white" id="basic-addon1">Resistance</span>
+						<span class="input-group-text bg-primary text-white" id="basic-addon2">Resistance</span>
 					</div>
-					<input id="Res" type="text" class="form-control" placeholder="&#8486" aria-label="Username" aria-describedby="basic-addon1">
+					<input id="Res" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+					<div class="input-group-append">
+						<span class="input-group-text">k&#8486;</span>
+					</div>
 				</div>	
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text bg-primary text-white" id="basic-addon1">Capacitance</span>
+						<span class="input-group-text bg-primary text-white" id="basic-addon3">Capacitance</span>
 					</div>
-					<input id="Cap" type="text" class="form-control" placeholder="C" aria-label="Username" aria-describedby="basic-addon1">
+					<input id="Cap" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+					<div class="input-group-append">
+						<span class="input-group-text">&#181;C</span>
+					</div>					
 				</div>	
 
 				<button id="DischargeButton" data-step='10' data-intro='Click here to show or unshow Voltage/Capacitor/Resistor Curve'>Discharge</button>
@@ -405,30 +410,4 @@ Sorry, your browser does not support inline SVG.
 	<!-- Grid row -->
 </section>
 
-
-<!--bookmark-->
-
-
-<!--Section: Jumbotron-->
-<section class="card wow fadeIn collapse" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg);">
-
-	<!-- Content -->
-	<div class="collapse card-body text-white text-center py-5 px-5 my-5">
-
-		<h1 class="mb-4">
-			<strong>Random Jumbotron to <br />fill up screen space for now</strong>
-		</h1>
-
-		<a target="_blank" href="#" class="btn btn-outline-white btn-lg">Linked to this website
-			<i class="fa fa-graduation-cap ml-2"></i>
-		</a>
-
-	</div>
-	<!-- Content -->
-</section>
-<!--Section: Jumbotron-->
-
-</div>
-</main>
-<!--Main layout-->
-
+</div>	
