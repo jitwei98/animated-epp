@@ -63,7 +63,7 @@ app.use(passport.session());
 //local variable using middleware
 app.use((req,res,next)=>{
     res.locals.user = req.user || null;
-   res.locals.sucess_message = req.flash('success_message');
+    res.locals.sucess_message = req.flash('success_message');
     res.locals.error_message = req.flash('error_message');
     res.locals.error = req.flash('error');
     next();
@@ -75,14 +75,14 @@ const home = require('./routes/home/index');
 const admin = require('./routes/admin/index');
 const posts = require('./routes/admin/posts');
 const lecture = require('./routes/lectures/index');
-const quizLanding = require('./routes/admin/quiz');
+const quiz = require('./routes/admin/quiz');
 //use routes
 app.use('/',home);
 app.use('/admin/:id',admin);
 app.use('/admin/posts/:id',posts);
 //app.use('/admin/posts',posts);
-app.use('/lecture',lecture);
-app.use('/quiz_landing',quizLanding);
+app.use('/lecture', lecture);
+app.use('/quiz', quiz);
 
 var port = process.env.port || 3000;
 app.listen(port,()=>{
