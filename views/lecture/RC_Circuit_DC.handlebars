@@ -264,7 +264,7 @@ window.onmousemove = function(e) {
 		y += (deltaY /= 1000);
         y = y > 0 ? y : 0.10; // lower bound
         y = y <= 4 ? y : 4.00; // upper bound
-        voltage.textContent = y.toFixed(2) + 'V ~';
+        voltage.textContent = y.toFixed(2) + 'V';
         document.getElementById("Vol").value = y.toFixed(2);
     } else if (component === 2) {
 		// TODO: different suffix, ie k, M
