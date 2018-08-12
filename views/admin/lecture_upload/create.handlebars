@@ -1,0 +1,22 @@
+<h1> Create Post</h1>
+{{#each errors}}
+    <div class="alert alert-danger">{{message}}</div>
+{{/each}}
+<h1>{{topic}}</h1>
+<form action="/admin/lecture_upload/{{UserId}}/{{topic}}/create" method="post" enctype="multipart/form-data">
+
+
+    <div class="form-group">
+        <label for="file"> File Upload</label>
+        <input name="file" type="file" class="form-control" id="file" >
+    </div>
+    <div class="form-group">
+        <label for="slideNum"> Slide Number(please do not change this)</label>
+        <input name="slideNum" type="text" class="form-control" id="title" value={{slideNum}} >
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Create Post</button>
+</form>

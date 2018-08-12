@@ -24,8 +24,7 @@ mongoose.connect(mongoDbUrl)
     });
 
 
-//intro js
-//app.use(intro());
+
 
 //Method override
 app.use(methodOR('_method'));
@@ -76,6 +75,7 @@ const admin = require('./routes/admin/index');
 const posts = require('./routes/admin/posts');
 const lecture = require('./routes/lectures/index');
 const quiz = require('./routes/admin/quiz');
+const lecture_upload = require('./routes/admin/lecture_upload')
 //use routes
 app.use('/',home);
 app.use('/admin/:id',admin);
@@ -83,6 +83,7 @@ app.use('/admin/posts/:id',posts);
 //app.use('/admin/posts',posts);
 app.use('/lecture', lecture);
 app.use('/quiz', quiz);
+app.use('/admin/lecture_upload/:id',lecture_upload);
 
 var port = process.env.port || 3000;
 app.listen(port,()=>{
