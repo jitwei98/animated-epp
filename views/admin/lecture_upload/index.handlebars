@@ -6,20 +6,18 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>Slide Number<button onclick="sortTable(1);">Sort</th>
-        <th>PDF<button onclick="sortTable(2);">Sort</th>
+        <th>Slide Number<button onclick="sortTable(1);">Sort</button></th>
+        <th>PDF<button onclick="sortTable(2);">Sort</button></th>
     </tr>
 
     </thead>
     <tbody>
-    {{#each posts}}
+    {{#each slide}}
         <tr>
             <td>{{id}}</td>
-            <td>{{question}}</td>
-            <td>{{answer}}</td>
-            <td>{{category}}</td>
-            <td><a href="/admin/posts/{{../UserId}}/edit/{{id}}" class="btn btn-info">Edit</a> </td>
-            <td><form action="/admin/posts/{{../UserId}}/{{id}}?_method=DELETE" method="post">
+            <td>{{order}}</td>
+            <td>{{file}}</td>
+            <td><form action="/admin/lecture_upload/{{../UserId}}/ohms_law/{{id}}?_method=DELETE" method="post">
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form></td>
         </tr>
