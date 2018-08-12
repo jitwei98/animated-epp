@@ -431,3 +431,35 @@
     <div id="result">this is testing</div>
 </main>
 <!--Main layout-->
+<!-- Intro Js -->
+<script type="text/javascript" src="/intro.js/intro.js"></script>
+<script type="text/javascript">
+    function startTour() {
+        var tour = introJs();
+        tour.setOption('tooltipPosition', 'auto');
+        tour.setOption('positionPrecedence', ['left', 'right', 'top', 'bottom']);
+        tour.start();
+
+    }
+
+
+    // and check for it when deciding whether to start.
+    window.addEventListener('load', function () {
+        var doneTour = localStorage.getItem('EventTour') === 'Completed';
+        if (doneTour) {
+            return;
+        }
+        else {
+            startTour();
+
+            introguide.oncomplete(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+
+            introguide.onexit(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+        }
+    });
+    //startTour();
+</script>
