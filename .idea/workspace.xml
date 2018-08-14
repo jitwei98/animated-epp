@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13b37b30-f45a-4b19-8dc6-a73b5d3dc9d3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/CG1111 Week 11 Studio 1 Prep (1).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/Week 1 Studio 2_sem1Ay1819_v6b.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" afterDir="false" />
     </list>
@@ -30,8 +30,8 @@
       <file leaf-file-name="high_pass_filter.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="42" column="147" selection-start-line="42" selection-start-column="147" selection-end-line="42" selection-end-column="147" />
+            <state relative-caret-position="204">
+              <caret line="43" column="143" selection-start-line="43" selection-start-column="143" selection-end-line="43" selection-end-column="143" />
             </state>
           </provider>
         </entry>
@@ -349,23 +349,23 @@
       <workItem from="1533897523333" duration="10096000" />
       <workItem from="1534042334477" duration="8201000" />
       <workItem from="1534051025989" duration="212000" />
-      <workItem from="1534223338653" duration="998000" />
+      <workItem from="1534223338653" duration="1483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201555000" />
+    <option name="totallyTimeSpent" value="202040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21017845" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21017845" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50033045" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.2991453" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.2991453" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32905984" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -662,8 +662,8 @@
     <entry file="file://$PROJECT_DIR$/views/lecture/uploading/high_pass_filter.handlebars" />
     <entry file="file://$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="42" column="147" selection-start-line="42" selection-start-column="147" selection-end-line="42" selection-end-column="147" />
+        <state relative-caret-position="204">
+          <caret line="43" column="143" selection-start-line="43" selection-start-column="143" selection-end-line="43" selection-end-column="143" />
         </state>
       </provider>
     </entry>
