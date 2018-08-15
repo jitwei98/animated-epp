@@ -286,7 +286,7 @@ text {
 
 		if (component === 1) {
 			y += (deltaY /= 1000);
-	        y = y > 0 ? y : 0.10; // lower bound
+	        y = y > 0 ? y : 0.01; // lower bound
 	        y = y <= 4 ? y : 4.00; // upper bound
 	        voltage.textContent = y.toFixed(2) + 'V';
 	        document.getElementById("Vol").value = y.toFixed(2);
