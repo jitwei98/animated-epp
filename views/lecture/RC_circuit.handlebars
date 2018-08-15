@@ -1,9 +1,5 @@
-
-
 <body>
 {{>lecture/home-nav}}
-
-
 
 <!--Main layout-->
 <main class="mt-5 pt-5">
@@ -96,7 +92,8 @@
                                     path, polyline, polygon, line {stroke-linecap:round;}
                                     rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges;}
 
-                                    .disable-highlighting {
+                                    /* disable highlighting*/
+                                    text {
                                         -webkit-user-select: none;  /* Chrome all / Safari all */
                                         -moz-user-select: none;     /* Firefox all */
                                         -ms-user-select: none;      /* IE 10+ */
@@ -105,14 +102,14 @@
 
                                 </style>
 
-                                <rect class="disable-highlighting" x="10" y="-0.5" width="185" height="210.5" fill="#FFFFFF" stroke="none"/>
+                                <rect x="10" y="-0.5" width="185" height="210.5" fill="#FFFFFF" stroke="none"/>
                                 <g id="g1" c_spiceCmd="null" c_para="Prefix Start`1`" importFlag="0" c_portOfADImportHack="" c_transformList="" xmlns="http://www.w3.org/2000/svg">
                                     <g c_origin="95,35" c_para="package`AXIAL-0.3`nameAlias`Value(&#x3a9;)`BOM_Manufacturer Part`?`spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`" c_partid="part_import_gge194" id="gge194" c_shapetype="group" c_etype="pinpart" >
                                         <g c_partid="part_annotation" id="gge196" >
-                                            <text class="disable-highlighting" id="gge196text" c_note="note_name" x="89.03125" y="27" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >1k
+                                            <text id="gge196text" c_note="note_name" x="89.03125" y="27" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >1k
                                             </text>
                                         </g>
-                                        <g class="disable-highlighting" c_partid="part_annotation" id="gge198" >
+                                        <g c_partid="part_annotation" id="gge198" >
                                             <text c_note="note_pre" x="89.0390625" y="18.0078125" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >R1
                                             </text>
                                         </g>
@@ -148,11 +145,11 @@
                                     <rect id="gge229" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="none" c_shapetype="line"  />
                                     <g c_origin="50,105" c_para="package`HDR1X2`nameAlias`Value`BOM_Manufacturer Part`?`spicePre`V`spiceSymbolName`Vsin`" c_partid="part_import_gge231" id="gge231" c_shapetype="group" c_etype="pinpart" >
                                         <g c_partid="part_annotation" id="gge233" >
-                                            <text class="disable-highlighting" id="gge233text" c_note="note_name" x="62" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >2.00V ~
+                                            <text id="gge233text" c_note="note_name" x="62" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >2.00V ~
                                             </text>
                                         </g>
                                         <g c_partid="part_annotation" id="gge235" data-step='2' data-intro='Click on a component and drag up or down to modify the value.'>
-                                            <text class="disable-highlighting" c_note="note_pre" x="62" y="108.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >V1
+                                            <text c_note="note_pre" x="62" y="108.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >V1
                                             </text>
                                         </g>
                                         <ellipse cx="50" cy="105" rx="10" ry="10" id="gge237" stroke="#880000" stroke-width="1" fill="none"   />
@@ -182,11 +179,11 @@
                                     </g>
                                     <g c_origin="145,105" c_para="package`RAD-0.1`nameAlias`Value(F)`BOM_Manufacturer Part`?`spicePre`C`spiceSymbolName`Capacitor`" c_partid="part_import_gge257" id="gge257" c_shapetype="group" c_etype="pinpart" >
                                         <g c_partid="part_annotation" id="gge259" >
-                                            <text class="disable-highlighting" c_note="note_name" id="gge259text" x="154.5" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >1u
+                                            <text c_note="note_name" id="gge259text" x="154.5" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >1u
                                             </text>
                                         </g>
                                         <g c_partid="part_annotation" id="gge261" >
-                                            <text class="disable-highlighting" c_note="note_pre" x="154.5" y="108.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >C1
+                                            <text c_note="note_pre" x="154.5" y="108.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  >C1
                                             </text>
                                         </g>
                                         <polyline points="145 95 145 101" stroke="#8D2323" id="gge263" stroke-width="1"   fill="none" stroke-linecap="round" />
