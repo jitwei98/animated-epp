@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13b37b30-f45a-4b19-8dc6-a73b5d3dc9d3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/pdfjs/pdfobject.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/lecture/testing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/lectures/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/lectures/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/lecture.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/lecture.handlebars" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +19,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="70" column="3" lean-forward="true" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -35,8 +28,8 @@
       <file leaf-file-name="high_pass_filter.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+            <state relative-caret-position="20">
+              <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -44,7 +37,7 @@
       <file leaf-file-name="lecture.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layouts/lecture.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="17">
               <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
             </state>
           </provider>
@@ -328,11 +321,12 @@
       <workItem from="1534306556679" duration="2883000" />
       <workItem from="1534317597151" duration="342000" />
       <workItem from="1534403383243" duration="6241000" />
+      <workItem from="1534413591106" duration="333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212874000" />
+    <option name="totallyTimeSpent" value="213207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -343,7 +337,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50033045" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49966952" weight="0.2991453" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.2991453" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32905984" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -577,13 +571,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/pdfjs-dist/lib/web/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pdfjs-dist/lib/web/app.js" />
     <entry file="file://$PROJECT_DIR$/views/lecture/RC_circuit.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -591,30 +579,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/pdfjs/pdfobject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#embed#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/lecture/testing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="44" column="127" selection-start-line="44" selection-start-column="122" selection-end-line="44" selection-end-column="127" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -635,17 +601,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="70" column="3" lean-forward="true" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/lecture.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="17">
           <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/lecture/testing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="44" column="127" selection-start-line="44" selection-start-column="122" selection-end-line="44" selection-end-column="127" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+        <state relative-caret-position="20">
+          <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
         </state>
       </provider>
     </entry>
