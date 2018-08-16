@@ -47,7 +47,7 @@ router.get('/filter_index',(req,res)=>{
     res.render('lecture/index_filter',);
 });
 router.get('/high_pass_filter',(req,res)=>{
-    res.render('lecture/high_pass_filter',{title:"High Pass Filter"});
+    res.render('lecture/high_pass_filter',{title:"High Pass Filter",filename:"Week 1 Studio 2_sem1Ay1819_v6b.pdf" } );
 });
 router.get('/low_pass_filter',(req,res)=>{
     res.render('lecture/low_pass_filter',{title:"Low Pass Filter"});
