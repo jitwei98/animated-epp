@@ -30,6 +30,18 @@
                         <!-- TODO: find out some way to determine the size of the object wrt to the child instead of hard-coding -->
                         <!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
 
+                        <!-- testing new nav tab -->
+                        <div>
+                        	<ul class="nav nav-tabs" role="tablist">
+							  <li class="nav-item">
+							    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+							  </li>
+							  <li class="nav-item">
+							    <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
+							  </li>
+							</ul>
+                        </div>
+
                         <!-- TODO: Pagination (display current page number) -->
                         <div id="slide_lecture">
                             <!-- Card -->
@@ -48,33 +60,6 @@
                                     <!--<embed src="/uploads/Week 1 Studio 2_sem1Ay1819_v6b.pdf" type="application/pdf" width=450px height= 300px>-->
 
 
-                                    <!-- Button -->
-                                    <a href="#" class="btn btn-primary">prev</a>
-                                    <!-- Button -->
-                                    <a href="#"id="next-btn-test" class="btn btn-primary float-right">next</a>
-                                    <script>
-                                        var pagination = 1;
-                                        var options = {
-                                            height: "270px",
-                                            pdfOpenParams: {
-                                                page: pagination,
-                                                toolbar :0,
-                                                statusbar:0,
-                                                navpanes:0,
-                                                messages:0,
-                                                scrollbar:0,
-                                                HideWindowUI:1,
-                                            },
-                                            width:"380px"
-                                        }
-                                        PDFObject.embed("/uploads/{{filename}}", "#example1",options);
-                                        $('#next-btn-test').click(()=>{
-                                            pagination++;
-                                            options.pdfOpenParams.page = pagination;
-                                            PDFObject.embed("/uploads/{{filename}}", "#example1",options);
-                                        });
-                                    </script>
-
                                 </div>
 
                             </div>
@@ -92,18 +77,49 @@
                         </div>
                         <!-- </iframe> -->
                         <!-- tab nav -->
-                        <ul class="nav nav-tabs text-white bg-danger">
+                        <ul class="nav nav-pills justify-content-end">
                             <!-- TODO: add .active to the <a> for the selected tab -->
                             <!-- TODO: figure out a better id since this is not button -->
-                            <li class="nav-item">
-                                <a id="lecture-btn" class="nav-link" href="#">Lecture</a>
-                                <!-- <button class="btn btn-primary" type="button">Lecture</button> -->
-                            </li>
-                            <li class="nav-item">
-                                <a id="playground-btn" class="nav-link active" href="#">Playground</a>
-                            </li>
-
+                            <!-- Button -->
+                            <a href="#" id="prev-btn" class="nav-item nav-link">PREV</a>
+                            <!-- Button -->
+                            <a href="#" id="next-btn" class="nav-item nav-link">NEXT</a>
                         </ul>
+
+                        <!-- Javascript for lecture slide navigation -->
+	                    <script type="text/javascript">
+	                        var pagination = 1;
+	                        var options = {
+	                            height: "270px",
+	                            pdfOpenParams: {
+	                                page: pagination,
+	                                toolbar :0,
+	                                statusbar:0,
+	                                navpanes:0,
+	                                messages:0,
+	                                scrollbar:0,
+	                                HideWindowUI:1,
+	                            },
+	                            width:"380px"
+	                        }
+	                        PDFObject.embed("/uploads/{{filename}}", "#example1", options);
+	                        // TODO: prevent the blinking, (ie Make the transition between page smoother)
+	                        $('#next-btn').click(()=>{
+	                        	// TODO: pagination upper bound check
+	                            pagination++;
+	                            options.pdfOpenParams.page = pagination;
+	                            PDFObject.embed("/uploads/{{filename}}", "#example1", options);
+	                        });
+	                        $('#prev-btn').click(()=>{
+	                        	if (pagination === 1) {
+	                        		return;
+	                        	} else {
+		                            pagination--;
+		                            options.pdfOpenParams.page = pagination;
+		                            PDFObject.embed("/uploads/{{filename}}", "#example1", options);
+	                        	}
+	                        });
+	                    </script>
                     </div>
                 </div>
                 <!-- Grid column -->
@@ -151,15 +167,9 @@
                 <div class="col-md-5 mb-3">
 
                     <div class="view overlay z-depth-1-half">
+                        <!-- Can hide with   style="display: none" -->
                         <div class="jumbotron">
                             <p class="lead">Reserved for further contents</p>
-                        </div>
-                        <div style="display: none">
-                            <h4>Buttons</h4>
-                            <button id="my-element" class="btn btn-primary" type="button">Lecture</button>
-                            <button id="my-other-element" class="btn btn-primary" type="button">Playground</button>
-                            <button class="btn btn-primary" type="button">Prev</button>
-                            <button class="btn btn-primary" type="button">Next</button>
                         </div>
                     </div>
 
@@ -186,25 +196,6 @@
 
         <!--bookmark-->
 
-
-        <!--Section: Jumbotron-->
-        <section class="card wow fadeIn collapse" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg);">
-
-            <!-- Content -->
-            <div class="collapse card-body text-white text-center py-5 px-5 my-5">
-
-                <h1 class="mb-4">
-                    <strong>Random Jumbotron to <br />fill up screen space for now</strong>
-                </h1>
-
-                <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Linked to this website
-                    <i class="fa fa-graduation-cap ml-2"></i>
-                </a>
-
-            </div>
-            <!-- Content -->
-        </section>
-        <!--Section: Jumbotron-->
 
     </div>
 </main>
