@@ -15,6 +15,7 @@ const intro = require('intro.js');
 
 
 mongoose.promiose = global.Promise;
+
 mongoose.connect(mongoDbUrl)
     .then(db=>{
         console.log('Connected to mongodb');
