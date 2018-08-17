@@ -31,7 +31,7 @@
                         <!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
 
                         <!-- testing new nav tab -->
-                        <div>
+                       <!--  <div>
                         	<ul class="nav nav-tabs" role="tablist">
 							  <li class="nav-item">
 							    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
@@ -40,7 +40,7 @@
 							    <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
 							  </li>
 							</ul>
-                        </div>
+                        </div> -->
 
                         <!-- TODO: Pagination (display current page number) -->
                         <div id="slide_lecture">
@@ -77,13 +77,19 @@
                         </div>
                         <!-- </iframe> -->
                         <!-- tab nav -->
-                        <ul class="nav nav-pills justify-content-end">
+                        <ul class="nav nav-pills" role="tablist">
                             <!-- TODO: add .active to the <a> for the selected tab -->
+						  <li class="nav-item">
+						    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+						  </li>
+						  <li class="nav-item">
+						    <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
+						  </li>
                             <!-- TODO: figure out a better id since this is not button -->
                             <!-- Button -->
-                            <a href="#" id="prev-btn" class="nav-item nav-link">PREV</a>
+                            <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
                             <!-- Button -->
-                            <a href="#" id="next-btn" class="nav-item nav-link">NEXT</a>
+                            <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
                         </ul>
 
                         <!-- Javascript for lecture slide navigation -->
