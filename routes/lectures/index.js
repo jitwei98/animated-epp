@@ -37,10 +37,10 @@ router.get('/RLC_circuit_DC',(req,res)=>{
     res.render('lecture/index_RLC_DC',{title:"RLC Circuit (DC)"});
 });
 router.get('/RC_circuit_DC',(req,res)=>{
-    res.render('lecture/RC_circuit_DC',{title:"DC Transient - Capacitor"});
+    res.render('lecture/RC_Circuit_DC',{title:"DC Transient - Capacitor"});
 });
 router.get('/RL_circuit_DC',(req,res)=>{
-    res.render('lecture/RL_circuit_DC',{title:"DC Transient - Inductor"});
+    res.render('lecture/RL_Circuit_DC',{title:"DC Transient - Inductor"});
 });
 //filters
 router.get('/filter_index',(req,res)=>{
