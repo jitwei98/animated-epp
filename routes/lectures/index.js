@@ -18,7 +18,6 @@ router.get('/',(req,res)=>{
 });
 router.get('/ohms_law',(req,res)=>{
     res.render('lecture/ohms_law',{title:"Ohm's Law"});
-    // res.render('lecture/high_pass_filter',{title:"High Pass Filter",filename:"Week 1 Studio 2_sem1Ay1819_v6b.pdf" } );
 });
 //AC side
 router.get('/RLC_circuit',(req,res)=>{
