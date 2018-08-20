@@ -17,7 +17,7 @@ router.get('/',(req,res)=>{
     res.render('lecture/index',{title:'Home Page'});
 });
 router.get('/ohms_law',(req,res)=>{
-    res.render('lecture/ohms_law',{title:"Ohm's Law"});
+    res.render('lecture/Ohms_law',{title:"Ohm's Law"});
 });
 //AC side
 router.get('/RLC_circuit',(req,res)=>{
