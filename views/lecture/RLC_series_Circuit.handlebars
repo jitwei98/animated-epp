@@ -4,7 +4,7 @@
 
 <!--Main layout-->
 <main class="mt-5 pt-5">
-	<div class="container">
+	<div class="container-fluid">
 		<section class="mb-4">
 
 			<!-- Grid row -->
@@ -278,7 +278,7 @@
 
 
     function resetBoundary() {
-        rect = ggee229.getBoundingClientRect();
+        rect = gge229.getBoundingClientRect();
         rectMarker1 = rect.left + (rect.right - rect.left) / 3;
         rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
         rectMarkerHorizontal = rect.top + (rect.bottom - rect.top) / 2;
@@ -296,19 +296,20 @@ Sorry, your browser does not support inline SVG.
 </div>
 <!-- </iframe> -->
 <!-- tab nav -->
-<ul class="nav nav-tabs text-white bg-danger">
-	<!-- TODO: add .active to the <a> for the selected tab -->
-		<!-- TODO: figure out a better id since this is not button -->
-		<li class="nav-item">
-			<a id="lecture-btn" class="nav-link" href="#" data-step='8' data-intro='Change to lecture mode'>Lecture</a>
-			<!-- <button class="btn btn-primary" type="button">Lecture</button> -->
-		</li>
-		<li class="nav-item">
-			<a id="playground-btn" class="nav-link active" href="#" data-step='9' data-intro='Change to Playground mode'>Playground</a>
-		</li>
-
-	</ul>
-</div>
+<ul class="nav nav-pills" role="tablist">
+    <!-- TODO: add .active to the <a> for the selected tab -->
+  <li class="nav-item">
+    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+  </li>
+  <li class="nav-item">
+    <a id="playground-btn" class="nav-link active" href="#" data-toggle="pill">Playground</a>
+  </li>
+    <!-- TODO: figure out a better id since this is not button -->
+    <!-- Button -->
+    <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
+    <!-- Button -->
+    <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
+</ul>
 </div>
 <!-- Grid column -->
 
