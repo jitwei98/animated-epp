@@ -5,6 +5,7 @@ const User = require('../../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const lecture = require('../../models/lectures/lecture');
 
 router.all('/*',(req,res,next)=>{
 
@@ -24,13 +25,13 @@ router.get('/RLC_circuit',(req,res)=>{
     res.render('lecture/index_RLC');
 });
 router.get('/RC_circuit',(req,res)=>{
-    res.render('lecture/RC_circuit',{title:"RC Circuit (AC)"});
+    res.render('lecture/RC_Circuit',{title:"RC Circuit (AC)"});
 });
 router.get('/RL_circuit',(req,res)=>{
-    res.render('lecture/RL_circuit',{title:"RL Circuit (AC)"});
+    res.render('lecture/RL_Circuit',{title:"RL Circuit (AC)"});
 });
 router.get('/RLC_series_circuit',(req,res)=>{
-    res.render('lecture/RLC_series_circuit',{title:"Series RLC Circuit"});
+    res.render('lecture/RLC_series_Circuit',{title:"Series RLC Circuit"});
 });
 //DC side
 router.get('/RLC_circuit_DC',(req,res)=>{
@@ -47,7 +48,11 @@ router.get('/filter_index',(req,res)=>{
     res.render('lecture/index_filter',);
 });
 router.get('/high_pass_filter',(req,res)=>{
-    res.render('lecture/high_pass_filter',{title:"High Pass Filter",filename:"Week 1 Studio 2_sem1Ay1819_v6b.pdf" } );
+    lecture.findOne({topic:'high_pass_filter'}).then(content=>{
+        console.log(content);
+        res.render('lecture/high_pass_filter',{title:"High Pass Filter",filename:content.file } );
+    })
+
 });
 router.get('/low_pass_filter',(req,res)=>{
     res.render('lecture/low_pass_filter',{title:"Low Pass Filter"});

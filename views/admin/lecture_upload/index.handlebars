@@ -15,9 +15,9 @@
     {{#each slide}}
         <tr>
             <td>{{id}}</td>
-            <td>{{order}}</td>
+            <td>{{topic}}</td>
             <td>{{file}}</td>
-            <td><form action="/admin/lecture_upload/{{../UserId}}/ohms_law/{{id}}?_method=DELETE" method="post">
+            <td><form action="/admin/lecture_upload/{{../UserId}}/{{id}}?_method=DELETE" method="post">
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form></td>
         </tr>

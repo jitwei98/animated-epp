@@ -157,6 +157,7 @@ router.delete('/:id',(req,res)=>{
     }
     Post.remove({_id: req.params.id})
         .then(result=>{
+
             req.flash('success_message',`Question was successfully deleted`);
             res.redirect('/admin/posts/'+UserId);
         });
