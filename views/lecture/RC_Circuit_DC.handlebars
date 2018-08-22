@@ -2,8 +2,8 @@
 
 {{>lecture/home-nav}}
 
-	<main class="mt-5 pt-5">
-	<div class="container">
+<main class="mt-5 pt-5">
+	<div class="container-fluid">
 		<section class="mb-4">
 			<!-- Page Heading -->
 
@@ -13,7 +13,7 @@
 				<!-- Grid column -->
 				<div class="col-md-7 mb-3">
 
-					<div class="view overlay z-depth-1-half">
+					<div>
 						<div id='ggb' data-step='4' data-intro="This changes will be reflect on graph "></div>
 					</div>
 
@@ -23,7 +23,7 @@
 				<!-- Grid column -->
 				<div class="col-md-5 mb-3">
 
-					<div class="view overlay z-depth-1-half">
+					<div><!-- class="view overlay z-depth-1-half"> -->
 						<!-- <iframe> -->
 							<!-- TODO: find out some way to determine the size of the object wrt to the child instead of hard-coding -->
 							<!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
@@ -31,53 +31,16 @@
 							<!-- TODO: Pagination (display current page number) -->
 							<div id="slide_lecture">
 								<!-- Card -->
-								<div class="card" height="100%" width="100%">
+<!-- 								<div class="card" height="100%" width="100%"> -->
 									<!-- Card content -->
-									<div id="lecture_pg1" class="card-body">
+									<div id="lecture_pg1">
 
 										<!-- Title -->
-										<h4 class="card-title"><a>Energy Storage</a></h4>
-
-										<!-- Text -->
-										<p class="card-text">
-											<ul>
-												<li><p class="card-text">When a capacitor gets charged, the energy is stored in its electric field</p></li>
-												<li><p class="card-text">The stored energy can be expressed in terms of the work done in moving the charges to set up the field</p></li>
-											</ul>
-
-										</p>
-										
-										<!-- Button -->
-										<a href="#" class="btn btn-primary">PREV</a>
-										<!-- Button -->
-										<a href="#"id="next-btn-test" class="btn btn-primary float-right">NEXT</a>
+										<div id="example1"></div>
+										<script src="/pdfjs/pdfobject.js"></script>
 
 									</div>
 
-									<!-- Card content -->
-									<div id="lecture_pg2" class="card-body">
-
-										<!-- Title -->
-										<h4 class="card-title"><a>Capacitor’s Energy Equation</a></h4>
-
-										<!-- Text -->
-										<!-- <p class="card-text">                  TODO: better equation markdown, like MATHJAX                      -->
-											<ul>
-												<li><p class="card-text">Recall: voltage is a measure of the energy transferred (work done) per unit charge</p></li>
-												<li><p class="card-text">Hence, work done in moving charge from one plate to another: <br /><div align="center"><i>dw = v dq</i></div></p></li>
-												<li><p class="card-text">For a capacitor that already has voltage , the stored charge is: <br /><div align="center"><i>W = QV</i></div></p></li>
-												<li><p class="card-text">Hence, work done to attain Q is <div align="center"><i>W = 1/2 CV^2</i></div></p></li>
-											</ul>
-
-										</p>
-										<!-- Button -->
-										<a href="#" id="prev-btn-test" class="btn btn-primary">prev</a>
-										<!-- Button -->
-										<a href="#" class="btn btn-primary float-right">next</a>
-
-									</div>
-
-								</div>
 								<!-- Card -->
 							</div>
 
@@ -216,7 +179,7 @@
 									<polyline c_etype="wire" c_shapetype="line" points="75 35 50 35 50 85" stroke="#008800" id="gge285" stroke-width="1"   fill="none" stroke-linecap="round" />
 								</g>
 
-								<rect id="gge229" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="#FFFFFF" fill-opacity="0.0" c_shapetype="line"   data-step='3' data-intro='This is where you can change Voltage and Capacitence and Resistance of the circuit'/ >
+								<rect id="background" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="#FFFFFF" fill-opacity="0.0" c_shapetype="line"   data-step='3' data-intro='This is where you can change Voltage and Capacitence and Resistance of the circuit'/ >
 
 <script type="text/javascript">
 	// <![CDATA[
@@ -255,7 +218,7 @@
 	// BUG: if you modify R after modifying V, R will start with prev V value
 	window.onmousemove = function(e) {
 		//alert(inResistorRange(e.clientX, e.clientY));
-		//console.log(e.clientX + ', ' + e.clientY);
+		// console.log(e.clientX + ', ' + e.clientY);
 		deltaY = y0 - e.clientY;
 		// TODO: voltage can have 0.5V, key in values?
 
@@ -286,11 +249,13 @@
 	};
 
 
-	window.onresize = function() {
+	function setupCircuit() {
 		rect = gge229.getBoundingClientRect();
 		rectMarker1 = rect.left + (rect.right - rect.left) / 3;
 		rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
 	};
+
+	window.onresize = setupCircuit;
 
 		// ]]>
 </script>
@@ -301,18 +266,55 @@ Sorry, your browser does not support inline SVG.
 </div>
 <!-- </iframe> -->
 <!-- tab nav -->
-<ul class="nav nav-tabs primary">
-	<!-- TODO: add .active to the <a> for the selected tab -->
-		<!-- TODO: figure out a better id since this is not button -->
-		<li class="nav-item">
-			<a id="lecture-btn" class="nav-link" href="#" data-step='8' data-intro='Change to lecture mode'>Lecture</a>
-			<!-- <button class="btn btn-primary" type="button">Lecture</button> -->
-		</li>
-		<li class="nav-item">
-			<a id="playground-btn" class="nav-link" href="#" data-step='9' data-intro='Change to Playground mode'>Playground</a>
-		</li>
+<ul class="nav nav-pills" role="tablist">
+    <!-- TODO: add .active to the <a> for the selected tab -->
+  <li class="nav-item">
+    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+  </li>
+  <li class="nav-item">
+    <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
+  </li>
+    <!-- TODO: figure out a better id since this is not button -->
+    <!-- Button -->
+    <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
+    <!-- Button -->
+    <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
+</ul>
 
-	</ul>
+<!-- Javascript for lecture slide navigation -->
+<script type="text/javascript">
+    var pagination = 1;
+    var options = {
+        height: "380px",
+        pdfOpenParams: {
+            page: pagination,
+            toolbar :0,
+            statusbar:0,
+            navpanes:0,
+            messages:0,
+            scrollbar:0,
+            HideWindowUI:1,
+        },
+        width:"500px"
+    }
+    PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    // TODO: prevent the blinking, (ie Make the transition between page smoother)
+    $('#next-btn').click(()=>{
+    	// TODO: pagination upper bound check
+        pagination++;
+        options.pdfOpenParams.page = pagination;
+        PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    });
+    $('#prev-btn').click(()=>{
+    	if (pagination === 1) {
+    		return;
+    	} else {
+            pagination--;
+            options.pdfOpenParams.page = pagination;
+            PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    	}
+    });
+</script>
 </div>
 </div>
 <!-- Grid column -->
