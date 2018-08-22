@@ -198,6 +198,14 @@
 	var rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
 	// console.log(rect.top + ',' + rect.bottom);
 
+
+	function setupCircuit() {
+		rect = gge229.getBoundingClientRect();
+		rectMarker1 = rect.left + (rect.right - rect.left) / 3;
+		rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
+	};
+	window.onload = setupCircuit;
+
 	window.onmousedown = function(e) {
 		// console.log(e.clientX + ", " + e.clientY);
 	    // TODO: make it work on all types of screen
@@ -212,6 +220,7 @@
 	    	component = 3;
 	    	y0 = e.clientY;
 	    }
+	    console.log(component);
 	};
 
 	// TODO: get initial state and save individually
@@ -246,13 +255,6 @@
 
 	window.onmouseup = function() {
 		component = 0;
-	};
-
-
-	function setupCircuit() {
-		rect = gge229.getBoundingClientRect();
-		rectMarker1 = rect.left + (rect.right - rect.left) / 3;
-		rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
 	};
 
 	window.onresize = setupCircuit;

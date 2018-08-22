@@ -95,7 +95,6 @@
         };
 
         document.getElementById('playground-btn').onclick = function() {
-            setupCircuit();
             displayCircuit();
         };
 
@@ -109,6 +108,7 @@
     }
 
     function displayCircuit() {
+        setupCircuit();
         document.querySelector('#slide_lecture').style.display = 'none';
         document.querySelector('#slide_circuit').style.display = 'block';
     }
