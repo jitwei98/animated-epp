@@ -1,92 +1,26 @@
-
-
 <body>
 {{>lecture/home-nav}}
 
-
 <!--Main layout-->
 <main class="mt-5 pt-5">
-	<div class="container">
+	<div class="container-fluid">
 		<section class="mb-4">
 
 			<!-- Grid row -->
 			<div class="row">
 
 				<!-- Grid column -->
-				<div class="col-md-7 mb-3">
+				<div class="col-md-8 mb-4">
 
-					<div class="view overlay z-depth-1-half">
+					<div> <!-- class="view overlay z-depth-1-half"> -->
 						<div id='ggb' data-step='4' data-intro="This changes will be reflect on graph "></div>
 					</div>
 
 				</div>
 				<!-- Grid column -->
 
-				<!-- Grid column -->
-				<div class="col-md-5 mb-3">
-
-					<div class="view overlay z-depth-1-half">
-						<!-- <iframe> -->
-							<!-- TODO: find out some way to determine the size of the object wrt to the child instead of hard-coding -->
-							<!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
-
-							<!-- TODO: Pagination (display current page number) -->
-							<div id="slide_lecture">
-								<!-- Card -->
-								<div class="card" height="100%" width="100%">
-									<!-- Card image -->
-									<img class="card-img-top" src="not_ohms_law.png" brightness="0.5" alt="Card image cap">
-
-									<!-- Card content -->
-									<div id="lecture_pg1" class="card-body">
-
-										<!-- Title -->
-										<h4 class="card-title"><a>Energy Storage</a></h4>
-
-										<!-- Text -->
-										<p class="card-text">
-											<ul>
-												<li><p class="card-text">When a capacitor gets charged, the energy is stored in its electric field</p></li>
-												<li><p class="card-text">The stored energy can be expressed in terms of the work done in moving the charges to set up the field</p></li>
-											</ul>
-
-										</p>
-										
-										<!-- Button -->
-										<a href="#" class="btn btn-primary">prev</a>
-										<!-- Button -->
-										<a href="#"id="next-btn-test" class="btn btn-primary float-right">next</a>
-
-									</div>
-
-									<!-- Card content -->
-									<div id="lecture_pg2" class="card-body">
-
-										<!-- Title -->
-										<h4 class="card-title"><a>Capacitor’s Energy Equation</a></h4>
-
-										<!-- Text -->
-										<!-- <p class="card-text">                  TODO: better equation markdown, like MATHJAX                      -->
-											<ul>
-												<li><p class="card-text">Recall: voltage is a measure of the energy transferred (work done) per unit charge</p></li>
-												<li><p class="card-text">Hence, work done in moving charge from one plate to another: <br /><div align="center"><i>dw = v dq</i></div></p></li>
-												<li><p class="card-text">For a capacitor that already has voltage , the stored charge is: <br /><div align="center"><i>W = QV</i></div></p></li>
-												<li><p class="card-text">Hence, work done to attain Q is <div align="center"><i>W = 1/2 CV^2</i></div></p></li>
-											</ul>
-
-										</p>
-										<!-- Button -->
-										<a href="#" id="prev-btn-test" class="btn btn-primary">prev</a>
-										<!-- Button -->
-										<a href="#" class="btn btn-primary float-right">next</a>
-
-									</div>
-
-								</div>
-								<!-- Card -->
-							</div>
-
-							<div id="slide_circuit">
+                <div class="col-md-4 mb-4">
+				<div id="slide_circuit">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="412" height="467.6756756756757" viewBox="10 0 185 210">
                                     <title>
@@ -263,7 +197,7 @@
                                     <script type="text/javascript">
                                         // <![CDATA[
                                         // TODO: Run the code below at the right time, such as onclick of "playground-btn" or on render
-                                        const boundingRect = document.getElementById('bounding-rect');
+                                        const gge229 = document.getElementById('gge229');
                                         const voltage = document.getElementById('gge233text');
                                         const resistor = document.getElementById('gge196text');
                                         const inductor = document.getElementById('gge289text');
@@ -272,7 +206,7 @@
                                         var y0;
                                         var y = 1;
 
-                                        var rect = boundingRect.getBoundingClientRect();
+                                        var rect = gge229.getBoundingClientRect();
                                         var rectMarker1 = rect.left + (rect.right - rect.left) / 3;
                                         var rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
                                         // console.log(rect.top + ',' + rect.bottom);
@@ -329,7 +263,7 @@
 
 
                                         window.onresize = function() {
-                                            rect = boundingRect.getBoundingClientRect();
+                                            rect = gge229.getBoundingClientRect();
                                             rectMarker1 = rect.left + (rect.right - rect.left) / 3;
                                             rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
                                         };
@@ -339,21 +273,25 @@
                                     Sorry, your browser does not support inline SVG.
                                 </svg>
 
-                            </div>
+
 <!-- </iframe> -->
 <!-- tab nav -->
-<ul class="nav nav-tabs text-white bg-danger">
-	<!-- TODO: add .active to the <a> for the selected tab -->
-		<!-- TODO: figure out a better id since this is not button -->
-		<li class="nav-item">
-			<a id="lecture-btn" class="nav-link" href="#" data-step='8' data-intro='Change to lecture mode'>Lecture</a>
-			<!-- <button class="btn btn-primary" type="button">Lecture</button> -->
-		</li>
-		<li class="nav-item">
-			<a id="playground-btn" class="nav-link active" href="#" data-step='9' data-intro='Change to Playground mode'>Playground</a>
-		</li>
-
-	</ul>
+<ul class="nav nav-pills" role="tablist">
+    <!-- TODO: add .active to the <a> for the selected tab -->
+  <li class="nav-item">
+    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+  </li>
+  <li class="nav-item">
+    <a id="playground-btn" class="nav-link active" href="#" data-toggle="pill">Playground</a>
+  </li>
+    <!-- TODO: figure out a better id since this is not button -->
+    <!-- Button -->
+    <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
+    <!-- Button -->
+    <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
+</ul>
+</div>
+</div>  
 </div>
 </div>
 <!-- Grid column -->
@@ -366,8 +304,10 @@
 	<!-- Grid row -->
 	<div class="row">
 
+        <div class="col-md-1"></div>
+
 		<!-- Grid column -->
-		<div class="col-md-7 mb-3">
+		<div class="col-md-6 mb-3">
 
 			<div class="view overlay z-depth-1-half">
 				<h4>Graph control panel <small>(will be placed in the graph)</small></h4>
