@@ -12,7 +12,7 @@
                 <!-- Grid column -->
                 <div class="col-md-7 mb-3">
 
-                    <div class="view overlay z-depth-1-half">
+                    <div> <!-- class="view overlay z-depth-1-half"> -->
                         <div id='ggb' data-step='3' data-intro='The corresponding values will be updated in the graph.'></div>
                     </div>
 
@@ -21,67 +21,6 @@
 
                 <!-- Grid column -->
                 <div class="col-md-5 mb-3">
-
-                    <div class="view overlay z-depth-1-half">
-                        <!-- <iframe> -->
-                        <!-- TODO: find out some way to determine the size of the object wrt to the child instead of hard-coding -->
-                        <!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
-
-                        <!-- TODO: Pagination (display current page number) -->
-                        <div id="slide_lecture">
-                            <!-- Card -->
-                            <div class="card" height="100%" width="100%">
-                                <!-- Card image -->
-                                <img class="card-img-top" src="not_ohms_law.png" brightness="0.5" alt="Card image cap">
-
-                                <!-- Card content -->
-                                <div id="lecture_pg1" class="card-body">
-
-                                    <!-- Title -->
-                                    <h4 class="card-title"><a>Energy Storage</a></h4>
-
-                                    <!-- Text -->
-                                    <p class="card-text">
-                                        <ul>
-                                            <li><p class="card-text">When a capacitor gets charged, the energy is stored in its electric field</p></li>
-                                    <li><p class="card-text">The stored energy can be expressed in terms of the work done in moving the charges to set up the field</p></li>
-                                    </ul>
-
-                                    </p>
-
-                                    <!-- Button -->
-                                    <a href="#" class="btn btn-primary">prev</a>
-                                    <!-- Button -->
-                                    <a href="#"id="next-btn-test" class="btn btn-primary float-right">next</a>
-
-                                </div>
-
-                                <!-- Card content -->
-                                <div id="lecture_pg2" class="card-body">
-
-                                    <!-- Title -->
-                                    <h4 class="card-title"><a>Capacitor’s Energy Equation</a></h4>
-
-                                    <!-- Text -->
-                                    <!-- <p class="card-text">                  TODO: better equation markdown, like MATHJAX                      -->
-                                    <ul>
-                                        <li><p class="card-text">Recall: voltage is a measure of the energy transferred (work done) per unit charge</p></li>
-                                        <li><p class="card-text">Hence, work done in moving charge from one plate to another: <br /><div align="center"><i>dw = v dq</i></div></p></li>
-                                        <li><p class="card-text">For a capacitor that already has voltage , the stored charge is: <br /><div align="center"><i>W = QV</i></div></p></li>
-                                        <li><p class="card-text">Hence, work done to attain Q is <div align="center"><i>W = 1/2 CV^2</i></div></p></li>
-                                    </ul>
-
-                                    </p>
-                                    <!-- Button -->
-                                    <a href="#" id="prev-btn-test" class="btn btn-primary">prev</a>
-                                    <!-- Button -->
-                                    <a href="#" class="btn btn-primary float-right">next</a>
-
-                                </div>
-
-                            </div>
-                            <!-- Card -->
-                        </div>
 
                         <div id="slide_circuit">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="412" height="468.7891891891892" viewBox="10 -0.5 185 210.5">
@@ -302,17 +241,19 @@
                         </div>
                         <!-- </iframe> -->
                         <!-- tab nav -->
-                        <ul class="nav nav-tabs text-white bg-danger"  data-step='1' data-intro='Switch between different modes.'>
+                        <ul class="nav nav-pills" role="tablist">
                             <!-- TODO: add .active to the <a> for the selected tab -->
+                          <li class="nav-item">
+                            <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="playground-btn" class="nav-link active" href="#" data-toggle="pill">Playground</a>
+                          </li>
                             <!-- TODO: figure out a better id since this is not button -->
-                            <li class="nav-item">
-                                <a id="lecture-btn" class="nav-link" href="#">Lecture</a>
-                                <!-- <button class="btn btn-primary" type="button">Lecture</button> -->
-                            </li>
-                            <li class="nav-item">
-                                <a id="playground-btn" class="nav-link active" href="#">Playground</a>
-                            </li>
-
+                            <!-- Button -->
+                            <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
+                            <!-- Button -->
+                            <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
                         </ul>
                     </div>
                 </div>
@@ -326,8 +267,10 @@
             <!-- Grid row -->
             <div class="row">
 
+                <div class="col-md-1"></div>
+
                 <!-- Grid column -->
-                <div class="col-md-7 mb-3">
+                <div class="col-md-6 mb-3">
 
                     <div class="view overlay z-depth-1-half">
                         <h4>Graph control panel <small>(will be placed in the graph)</small></h4>
@@ -341,18 +284,27 @@
                                 <span class="input-group-text bg-primary text-white" id="basic-addon1">Voltage</span>
                             </div>
                             <input id="Vol" type="text" class="form-control" placeholder="V" aria-label="Username" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <span class="input-group-text">V</span>
+                            </div>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-primary text-white" id="basic-addon1">Resistance</span>
                             </div>
                             <input id="Res" type="text" class="form-control" placeholder="&#8486" aria-label="Username" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <span class="input-group-text">k&#8486;</span>
+                            </div>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-primary text-white" id="basic-addon1">Capacitance</span>
                             </div>
                             <input id="Cap" type="text" class="form-control" placeholder="C" aria-label="Username" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <span class="input-group-text">H</span>
+                            </div>
                         </div>
 
                         <button id="VoltageButton">Voltage</button>
@@ -427,7 +379,6 @@
         <!--Section: Jumbotron-->
 
     </div>
-    <div id="result">this is testing</div>
 </main>
 <!--Main layout-->
 <!-- Intro Js -->
