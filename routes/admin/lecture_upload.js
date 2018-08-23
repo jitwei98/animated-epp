@@ -134,7 +134,7 @@ router.delete('/:id',(req,res)=>{
         fs.unlink(newDir+result.file,err=>{
             if(err) throw err;
         });
-        
+
             result.remove({})
                 .then(deleted=>{
 

@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13b37b30-f45a-4b19-8dc6-a73b5d3dc9d3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/lectures/ohms_law.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/lectures/lecture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lecture/ohm_law/1534049087629-Capture.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lecture/ohm_law/1534049096903-Capture.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lecture/ohm_law/1534049383967-Capture.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1534049539778-Capture.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/CG1111 Week 11 Studio 1 Prep (1).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/Week 1 Studio 2_sem1Ay1819_v6b.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/lecture_upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/lecture_upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/lectures/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/lectures/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/lecture_upload/create.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/lecture_upload/create.handlebars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/lecture_upload/index.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/lecture_upload/index.handlebars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/admin.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/admin.handlebars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/lecture/RC_circuit.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/RC_Circuit.handlebars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/high_pass_filter.handlebars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/lecture/uploading/high_pass_filter.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/lecture/uploading/high_pass_filter.handlebars" afterDir="false" />
-    </list>
+    <list default="true" id="13b37b30-f45a-4b19-8dc6-a73b5d3dc9d3" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -71,8 +53,8 @@
       <file leaf-file-name="lecture_upload.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/admin/lecture_upload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="143" column="19" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
+            <state relative-caret-position="219">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
             </state>
           </provider>
         </entry>
@@ -265,12 +247,6 @@
             <path>
               <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
               <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="lecture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animated-epp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animated-epp" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -372,12 +348,12 @@
       <workItem from="1534413591106" duration="2842000" />
       <workItem from="1534493084141" duration="140000" />
       <workItem from="1534493246774" duration="440000" />
-      <workItem from="1534909556707" duration="6883000" />
+      <workItem from="1534909556707" duration="7514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223179000" />
+    <option name="totallyTimeSpent" value="223810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -388,7 +364,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50033045" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.2991453" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49966952" weight="0.2991453" />
       <window_info id="Structure" order="2" sideWeight="0.5020325" side_tool="true" weight="0.21017845" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32905984" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -713,8 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/lecture_upload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="143" column="19" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
+        <state relative-caret-position="219">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
