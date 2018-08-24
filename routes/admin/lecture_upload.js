@@ -41,16 +41,13 @@ router.get('/create',(req,res)=>{
     User.findOne({_id:UserId}).then(user=> {
         if(user){
             lecture.find({}).then(slide=>{
-                let slideNum = slide.length+1;
+                let contentArr = [];
                 for(let i=0;i<slide.length;i++){
-                    if(slide[i].order != i+1){
-                        slideNum = i+1;
-                        break;
-                    }
+                    contentArr.push(slide[i].topic);
                 }
                 if(user.authentication.toString() == "lecturer" ){
 
-                    res.render('admin/lecture_upload/create',{UserId:UserId});
+                    res.render('admin/lecture_upload/create',{UserId:UserId, contentArr: contentArr});
                 }else{
                     req.app.locals.layout = 'home';
                     res.render('home/index');
@@ -70,28 +67,35 @@ router.post('/create',(req,res)=>{
     let UserId = UserID(req);
    if(isEmpty(req.files)){
        errors.push({message:"Please include the file"});
+       res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
    }
    console.log(req.body.Topic);
    lecture.find({topic:req.body.Topic}).then(found=>{
-       if(found.length>0){
-           console.log("true");
-           errors.push({message:"Duplicate topic, please delete previous entry"});
-           if(errors.length>0){
-               console.log('errors');
-               res.render('admin/lecture_upload/create',{UserId:UserId,errors:errors});
-           }
-       }else{
-           let filename;
+
+           if (found.length > 0) {
+               console.log("true");
+               errors.push({message: "Duplicate topic, please delete previous entry"});
+               if (errors.length > 0) {
+                   console.log('errors');
+                   res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
+               }
+           } else {
+               let filename;
                let file = req.files.file;
-               filename = Date.now() + '-'+file.name;
-               file.mv('./public/uploads/'+filename,(err)=>{
-                   if(err) throw err;
+               filename = Date.now() + '-' + file.name;
+               file.mv('./public/uploads/' + filename, (err) => {
+                   if (err) throw err;
                })
                req.app.locals.layout = 'lecture';
-               res.render('lecture/uploading/high_pass_filter',{files:filename,UserId:UserId,Topic:req.body.Topic});
+               res.render('lecture/uploading/high_pass_filter', {
+                   files: filename,
+                   UserId: UserId,
+                   Topic: req.body.Topic
+               });
 
 
-       }
+           }
+
    });
 
 
