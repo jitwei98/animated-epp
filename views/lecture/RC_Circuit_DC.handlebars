@@ -182,6 +182,10 @@
 	const resistor = document.getElementById('gge196text');
 	const capacitor = document.getElementById('gge259text');
 
+	const LECTURE = 0;
+	const PLAYGROUND = 1;
+	var mode = LECTURE;
+
 	var component = 0; // 0: nothing, 1: battery, 2: resistor, 3: capacitor
 	var y0;
 	var y = 1;
@@ -193,6 +197,10 @@
 
 
 	function setupCircuit() {
+		// break if "Playground" mode is not selected
+		if (mode === LECTURE)
+			return;
+		// console.log("setupCircuit()");
 		rect = gge229.getBoundingClientRect();
 		rectMarker1 = rect.left + (rect.right - rect.left) / 3;
 		rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
@@ -213,7 +221,6 @@
 	    	component = 3;
 	    	y0 = e.clientY;
 	    }
-	    console.log(component);
 	};
 
 	// TODO: get initial state and save individually
@@ -251,6 +258,7 @@
 	};
 
 	window.onresize = setupCircuit;
+	window.onscroll = setupCircuit;
 
 		// ]]>
 </script>

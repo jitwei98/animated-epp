@@ -91,10 +91,12 @@
     window.onload = function() {
         displayLecture();
         document.getElementById('lecture-btn').onclick = function() {
+            mode = LECTURE;
             displayLecture();
         };
 
         document.getElementById('playground-btn').onclick = function() {
+            mode = PLAYGROUND;
             displayCircuit();
         };
 
