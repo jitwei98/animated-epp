@@ -3,7 +3,7 @@
 {{>lecture/home-nav}}
 
 <!--Main layout-->
-<main class="mt-5 pt-5">
+<main class="mt-3 pt-3">
 	<div class="container-fluid">
 		<section class="mb-4">
 
@@ -13,7 +13,7 @@
 				<!-- Grid column -->
 				<div class="col-md-7 mb-3">
 
-					<div> <!-- class="view overlay z-depth-1-half"> -->
+					<div> 
 						<div id='ggb' data-step='4' data-intro="This changes will be reflect on graph "></div>
 					</div>
 
@@ -29,6 +29,13 @@
 							<!-- object id="svgObj" data="RC_Circuit_svg.html" width="500px" height="500px"></object> -->
 
 							<!-- TODO: Pagination (display current page number) -->
+
+                        <div id="slide_lecture">
+                            <div id="lecture_pg1">
+                                <div id="example1"></div>
+                                <script src="/pdfjs/pdfobject.js"></script>
+                            </div>
+                        </div>
 
 							<div id="slide_circuit">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="412" height="469.0118918918919" viewBox="10 -0.5999999999999996 185 210.6">
@@ -205,6 +212,10 @@
     const inductor = document.getElementById('gge289text');
     const capacitor = document.getElementById('gge346text');
 
+    const LECTURE = 0;
+    const PLAYGROUND = 1;
+    var mode = LECTURE;
+
     var component = 0; // 0: nothing, 1: battery, 2: resistor, 3: inductor, 4: capacitor
     var y0;
     var y = 1;
@@ -214,6 +225,16 @@
     var rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
     var rectMarkerHorizontal = rect.top + (rect.bottom - rect.top)/2;
     // console.log(rect.top + ',' + rect.bottom);
+
+    function setupCircuit() {
+        // break if "Playground" mode is not selected
+        if (mode === LECTURE)
+            return;
+        // console.log("setupCircuit()");
+        rect = gge229.getBoundingClientRect();
+        rectMarker1 = rect.left + (rect.right - rect.left) / 3;
+        rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
+    }
 
     window.onmousedown = function(e) {
         // console.log(e.clientX + ", " + e.clientY);
@@ -276,16 +297,10 @@
         component = 0;
     };
 
-
-    function resetBoundary() {
-        rect = gge229.getBoundingClientRect();
-        rectMarker1 = rect.left + (rect.right - rect.left) / 3;
-        rectMarker2 = rectMarker1 + (rect.right - rect.left) / 3;
-        rectMarkerHorizontal = rect.top + (rect.bottom - rect.top) / 2;
-    };
-
-    window.addEventListener('resize', resetBoundary);
-    window.addEventListener('scroll', resetBoundary);
+    window.onresize = setupCircuit;
+    window.onscroll = setupCircuit;
+    // window.addEventListener('resize', resetBoundary);
+    // window.addEventListener('scroll', resetBoundary);
 
     // ]]>
 </script>
@@ -302,7 +317,7 @@ Sorry, your browser does not support inline SVG.
     <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
   </li>
   <li class="nav-item">
-    <a id="playground-btn" class="nav-link active" href="#" data-toggle="pill">Playground</a>
+    <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
   </li>
     <!-- TODO: figure out a better id since this is not button -->
     <!-- Button -->
@@ -310,6 +325,42 @@ Sorry, your browser does not support inline SVG.
     <!-- Button -->
     <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
 </ul>
+
+<!-- Javascript for lecture slide navigation -->
+<script type="text/javascript">
+    var pagination = 1;
+    var options = {
+        height: "380px",
+        pdfOpenParams: {
+            page: pagination,
+            toolbar :0,
+            statusbar:0,
+            navpanes:0,
+            messages:0,
+            scrollbar:0,
+            HideWindowUI:1,
+        },
+        width:"500px"
+    }
+    PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    // TODO: prevent the blinking, (ie Make the transition between page smoother)
+    $('#next-btn').click(()=>{
+        // TODO: pagination upper bound check
+        pagination++;
+        options.pdfOpenParams.page = pagination;
+        PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    });
+    $('#prev-btn').click(()=>{
+        if (pagination === 1) {
+            return;
+        } else {
+            pagination--;
+            options.pdfOpenParams.page = pagination;
+            PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+        }
+    });
+</script>
+</div>
 </div>
 <!-- Grid column -->
 
