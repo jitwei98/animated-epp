@@ -242,6 +242,15 @@
         .footer, .push {
             height: 142px; /* .push must be the same height as .footer */
         }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -317,6 +326,11 @@
     <!-- /* To get a sticky footer */ -->
     <div class="push"></div>
 </div>
+
 <!-- /* To get a sticky footer */ -->
-<div class="footer"></div>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+    </div>
+</footer>
 </body>
