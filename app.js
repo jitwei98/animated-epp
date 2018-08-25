@@ -86,7 +86,7 @@ app.use('/lecture', lecture);
 app.use('/quiz', quiz);
 app.use('/admin/lecture_upload/:id',lecture_upload);
 app.use(function(req, res, next) {
-    res.status(404).send('404 page');
+    res.status(404).render('error-handle/404');
 });
 var port = process.env.port || 3000;
 app.listen(port,()=>{
