@@ -302,55 +302,53 @@ Sorry, your browser does not support inline SVG.
 </div>
 <!-- </iframe> -->
 <!-- tab nav -->
-<!-- tab nav -->
 <ul class="nav nav-pills" role="tablist">
     <!-- TODO: add .active to the <a> for the selected tab -->
-    <li class="nav-item">
-        <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
-    </li>
-    <li class="nav-item">
-        <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
-    </li>
-    <li class="nav-item ml-auto">
+        <li class="nav-item">
+            <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+        </li>
+        <li class="nav-item">
+            <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
+        </li>
+        <!-- TODO: figure out a better id since this is not button -->
+        <!-- Button -->
         <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
-    </li>
-    <li class="nav-item">
+        <!-- Button -->
         <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
-    </li>
-</ul>
+    </ul>
 
-<!-- Javascript for lecture slide navigation -->
-<script type="text/javascript">
-    var pagination = 1;
-    var options = {
-        height: "380px",
-        pdfOpenParams: {
-            page: pagination,
-            toolbar :0,
-            statusbar:0,
-            navpanes:0,
-            messages:0,
-            scrollbar:0,
-            HideWindowUI:1,
-        },
-        width:"500px"
-    }
-    PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    <!-- Javascript for lecture slide navigation -->
+    <script type="text/javascript">
+        var pagination = 1;
+        var options = {
+            height: "380px",
+            pdfOpenParams: {
+                page: pagination,
+                toolbar :0,
+                statusbar:0,
+                navpanes:0,
+                messages:0,
+                scrollbar:0,
+                HideWindowUI:1,
+            },
+            width:"500px"
+        }
+        PDFObject.embed("/lecture/{{filename}}", "#example1", options);
 // TODO: prevent the blinking, (ie Make the transition between page smoother)
 $('#next-btn').click(()=>{
-// TODO: pagination upper bound check
-pagination++;
-options.pdfOpenParams.page = pagination;
-PDFObject.embed("/lecture/{{filename}}", "#example1", options);
-});
-$('#prev-btn').click(()=>{
-if (pagination === 1) {
-	return;
-} else {
-    pagination--;
+	// TODO: pagination upper bound check
+    pagination++;
     options.pdfOpenParams.page = pagination;
     PDFObject.embed("/lecture/{{filename}}", "#example1", options);
-}
+});
+$('#prev-btn').click(()=>{
+	if (pagination === 1) {
+		return;
+	} else {
+        pagination--;
+        options.pdfOpenParams.page = pagination;
+        PDFObject.embed("/lecture/{{filename}}", "#example1", options);
+    }
 });
 </script>
 </div>
