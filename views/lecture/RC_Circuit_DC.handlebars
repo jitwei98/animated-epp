@@ -13,16 +13,15 @@
 				<!-- Grid column -->
 				<div class="col-md-7 mb-3">
 
-					<div>
-						<div id='ggb' data-step='4' data-intro="This changes will be reflect on graph "></div>
+						<div id='ggb' data-step = '2' data-intro="Changes made on playground will appears here"></div>
+                    <div class="container ml-3 btn-group" role="group" aria-label="Basic example"  data-step="3" data-intro="Click button to show or hide curves">
+                        <button id="DischargeButton" class="btn btn-secondary " >Discharge</button>
+                        <button id="ChargingButton" class="btn btn-secondary">Charge</button>
+                        <button id="a1" class="btn btn-secondary" >T=RC</button>
+                        <button id="a5" class="btn btn-secondary">T=5RC</button>
+                    </div>
 
-						<div class="container ml-3">
-							<button id="DischargeButton" data-step='10' data-intro='Click here to show or unshow Voltage/Capacitor/Resistor Curve'>Discharge</button>
-							<button id="ChargingButton">Charge</button>
-							<button id="a1">T=RC</button><button id="a5">T=5RC</button>
-							<a href="javascript:void(0);" onclick="javascript:startTour();">Show me how</a>
-						</div>
-					</div>
+
 
 				</div>
 				<!-- Grid column -->
@@ -67,8 +66,7 @@
 								<g id="g1" c_spiceCmd="null" c_para="Prefix Start`1`" importFlag="0" c_portOfADImportHack="" c_transformList="" xmlns="http://www.w3.org/2000/svg">
 									<g c_origin="95,35" c_para="package`AXIAL-0.3`nameAlias`Value(&#x3a9;)`BOM_Manufacturer Part`?`spicePre`R`spiceSymbolName`Res_AXIAL-0.3(1/8W)_US`" c_partid="part_import_gge194" id="gge194" c_shapetype="group" c_etype="pinpart" >
 										<g c_partid="part_annotation" id="gge196" >
-											<text id="gge196text" c_note="note_name" x="89.03125" y="27" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  
-											data-step='6' data-intro='Same for Resistance'>1k
+											<text id="gge196text" c_note="note_name" x="89.03125" y="27" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start">1k
 											</text>
 										</g>
 										<g c_partid="part_annotation" id="gge198" >
@@ -107,8 +105,7 @@
 									<rect id="gge229" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="none" c_shapetype="line"  />
 									<g c_origin="50,105" c_para="package`HDR1X2`nameAlias`Value`BOM_Manufacturer Part`?`spicePre`V`spiceSymbolName`Vsin`" c_partid="part_import_gge231" id="gge231" c_shapetype="group" c_etype="pinpart" >
 										<g c_partid="part_annotation" id="gge233" >
-											<text id="gge233text" c_note="note_name" x="62" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  data-step='5' 
-											data-intro="Click to change value. Drag up to increase and drag down to decrease">2.00V
+											<text id="gge233text" c_note="note_name" x="62" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start" >2.00V
 											</text>
 										</g>
 										<g c_partid="part_annotation" id="gge235" >
@@ -143,7 +140,7 @@
 									<g c_origin="145,105" c_para="package`RAD-0.1`nameAlias`Value(F)`BOM_Manufacturer Part`?`spicePre`C`spiceSymbolName`Capacitor`" c_partid="part_import_gge257" id="gge257" c_shapetype="group" c_etype="pinpart" >
 										<g c_partid="part_annotation" id="gge259" >
 											<text c_note="note_name" id="gge259text" x="154.5" y="117.25" fill="#000080" font-family="Arial" font-size="7pt" font-weight="" font-style="" dominant-baseline="" text-anchor="start"  
-											data-step='7' data-intro='Same for Capacitor'>1u
+											>1u
 											</text>
 										</g>
 										<g c_partid="part_annotation" id="gge261" >
@@ -179,7 +176,7 @@
 									<polyline c_etype="wire" c_shapetype="line" points="75 35 50 35 50 85" stroke="#008800" id="gge285" stroke-width="1"   fill="none" stroke-linecap="round" />
 								</g>
 
-								<rect id="background" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="#FFFFFF" fill-opacity="0.0" c_shapetype="line"   data-step='3' data-intro='This is where you can change Voltage and Capacitence and Resistance of the circuit'/ >
+								<rect id="background" x="20" y="10"   width="165" height="190" stroke="none" stroke-width="1" fill="#FFFFFF" fill-opacity="0.0" c_shapetype="line"  ></rect>
 
 <script type="text/javascript">
 	// <![CDATA[
@@ -275,19 +272,20 @@ Sorry, your browser does not support inline SVG.
 </div>
 <!-- </iframe> -->
 <!-- tab nav -->
-<ul class="nav nav-pills" role="tablist">
+<ul class="nav nav-pills" role="tablist" data-step = "1" data-intro="Switch between different mod">
     <!-- TODO: add .active to the <a> for the selected tab -->
   <li class="nav-item">
-    <a id="lecture-btn" class="nav-link active" href="#" data-toggle="pill">Lecture</a>
+    <a id="lecture-btn" class="nav-link active " href="#" data-toggle="pill">Lecture</a>
   </li>
   <li class="nav-item">
     <a id="playground-btn" class="nav-link" href="#" data-toggle="pill">Playground</a>
   </li>
     <!-- TODO: figure out a better id since this is not button -->
     <!-- Button -->
-    <a href="#" id="prev-btn" class="nav-item nav-link float-right">PREV</a>
+    <a href="#" id="prev-btn" class="nav-item nav-link btn float-right">PREV</a>
     <!-- Button -->
-    <a href="#" id="next-btn" class="nav-item nav-link float-right">NEXT</a>
+    <a href="#" id="next-btn" class="nav-item nav-link btn float-right">NEXT</a>
+
 </ul>
 
 <!-- Javascript for lecture slide navigation -->
@@ -391,3 +389,29 @@ Sorry, your browser does not support inline SVG.
 
 </div>
 </main>
+<!-- Intro Js -->
+<script type="text/javascript" src="/intro.js/intro.js"></script>
+<script type="text/javascript">
+    var introguide = introJs();
+
+
+    // and check for it when deciding whether to start.
+    window.addEventListener('load', function () {
+        var doneTour = localStorage.getItem('EventTour') === 'Completed';
+        if (doneTour) {
+            return;
+        }
+        else {
+            startTour();
+
+            introguide.oncomplete(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+
+            introguide.onexit(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+        }
+    });
+
+</script>
