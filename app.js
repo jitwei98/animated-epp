@@ -5,7 +5,7 @@ const expressHB = require('express-handlebars');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOR = require('method-override');
-const upload = require('express-fileupload');
+
 const session = require('express-session');
 const flash = require('connect-flash');
 const {mongoDbUrl} = require('./config/database');
@@ -13,7 +13,7 @@ const passport = require('passport');
 const Handlebars = require('handlebars');
 const intro = require('intro.js');
 
-const fileUpload = require('express-fileupload');
+//const fileUpload = require('express-fileupload');
 mongoose.promiose = global.Promise;
 
 mongoose.connect(mongoDbUrl)
@@ -39,8 +39,8 @@ app.set('view engine', 'handlebars');
 
 //Upload MiddleWare
 
-app.use(upload());
-app.use(fileUpload());
+
+//app.use(fileUpload());
 
 //body-parser
 app.use(bodyParser.json());

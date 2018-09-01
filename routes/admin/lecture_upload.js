@@ -1,12 +1,12 @@
 const express = require('express');
 const router  = express.Router();
-const {userAuthenticated} = require('../../helpers/authentication');
-const fileUpload = require('express-fileupload');
 const {isEmpty, uploadDir } = require('../../helpers/upload-helper');
 const User = require('../../models/user');
 const fs = require('fs');
 const lecture = require('../../models/lectures/lecture');
 const path = require('path');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 //overwrite default layout
 router.all('/*',(req,res,next)=>{
 
@@ -62,29 +62,32 @@ router.get('/create',(req,res)=>{
 });
 
 
-router.post('/create',(req,res)=>{
+router.post('/create',upload.single('uploadFiles'), (req,res)=>{
+    console.log(req.file);
     let errors =[];
     let UserId = UserID(req);
-   if(isEmpty(req.files)){
+   if(!req.file){
        errors.push({message:"Please include the file"});
        res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
+   }else{
+       let filename;
+       let file = req.file;
+       filename = Date.now() + '-' + file.originalname;
+       var newDir = path.join(__dirname,'../../public/uploads/')+ filename;
+       fs.rename(file.path, newDir, (err) => {
+           if (err) throw err;
+       });
+       // file.mv(newDir, (err) => {
+       //     if (err) throw err;
+       // });
+       req.app.locals.layout = 'lecture';
+       res.render('lecture/uploading/high_pass_filter', {
+           files: filename,
+           UserId: UserId,
+           Topic: req.body.Topic
+       });
    }
 
-
-   let filename;
-   let file = req.files.upload;
-   filename = Date.now() + '-' + file.name;
-    var newDir = path.join(__dirname,'../../public/uploads/')+ filename;
-
-   file.mv(newDir, (err) => {
-       if (err) throw err;
-   });
-   req.app.locals.layout = 'lecture';
-   res.render('lecture/uploading/high_pass_filter', {
-       files: filename,
-       UserId: UserId,
-       Topic: req.body.Topic
-   });
 
 });
 

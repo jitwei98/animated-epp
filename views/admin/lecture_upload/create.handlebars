@@ -6,8 +6,8 @@
 
 
     <div class="form-group">
-        <label for="file"> File Upload</label>
-        <input name="upload" type="file" class="form-control" id="file" >
+        <!--<label for="file"> File Upload</label>-->
+        <input name="uploadFiles" type="file" />
     </div>
     <div class="form-group">
         <select name="Topic" id="Topic" class="form-control">
@@ -22,11 +22,12 @@
 
         </select>
     </div>
-    <script>
-        {{#each contentArr}}
-            $('#{{this}}').attr("disabled","true");
-        {{/each}}
-    </script>
+
 
     <button type="submit" class="btn btn-primary">Create Post</button>
 </form>
+<script>
+        {{#each contentArr}}
+        $('#{{this}}').attr("disabled","true");
+        {{/each}}
+</script>
