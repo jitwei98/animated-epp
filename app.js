@@ -13,7 +13,7 @@ const passport = require('passport');
 const Handlebars = require('handlebars');
 const intro = require('intro.js');
 
-
+const fileUpload = require('express-fileupload');
 mongoose.promiose = global.Promise;
 
 mongoose.connect(mongoDbUrl)
@@ -40,6 +40,7 @@ app.set('view engine', 'handlebars');
 //Upload MiddleWare
 
 app.use(upload());
+app.use(fileUpload());
 
 //body-parser
 app.use(bodyParser.json());

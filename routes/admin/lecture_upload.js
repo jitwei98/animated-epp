@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const {userAuthenticated} = require('../../helpers/authentication');
-
+const fileUpload = require('express-fileupload');
 const {isEmpty, uploadDir } = require('../../helpers/upload-helper');
 const User = require('../../models/user');
 const fs = require('fs');
@@ -72,22 +72,19 @@ router.post('/create',(req,res)=>{
 
 
    let filename;
-   let file = req.files.file;
+   let file = req.files.upload;
    filename = Date.now() + '-' + file.name;
     var newDir = path.join(__dirname,'../../public/uploads/')+ filename;
+
    file.mv(newDir, (err) => {
        if (err) throw err;
-   })
+   });
    req.app.locals.layout = 'lecture';
    res.render('lecture/uploading/high_pass_filter', {
        files: filename,
        UserId: UserId,
        Topic: req.body.Topic
    });
-
-
-
-
 
 });
 
