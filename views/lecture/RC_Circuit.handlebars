@@ -365,7 +365,7 @@ PDFObject.embed("/lecture/{{filename}}", "#example1", options);
                                     <button id="startButton">start</button>
                                     <button id="OriginButton">Origin</button>
                                     <button onclick="startTour()">start Tour</button>
-                                    <script type="text/javascript" src ="/js/lecture/RC_Circuit.js"></script>
+                                    <script type="text/javascript" src ="/js/lecture/RC_circuit.js"></script>
                                 </div>
 
                             </div>
@@ -436,32 +436,32 @@ PDFObject.embed("/lecture/{{filename}}", "#example1", options);
             <!-- Intro Js -->
             <script type="text/javascript" src="/intro.js/intro.js"></script>
             <script type="text/javascript">
-                // function startTour() {
-                //     var tour = introJs();
-                //     tour.setOption('tooltipPosition', 'auto');
-                //     tour.setOption('positionPrecedence', ['left', 'right', 'top', 'bottom']);
-                //     tour.start();
+                function startTour() {
+                    var tour = introJs();
+                    tour.setOption('tooltipPosition', 'auto');
+                    tour.setOption('positionPrecedence', ['left', 'right', 'top', 'bottom']);
+                    tour.start();
 
-                // }
+                }
 
 
-    // and check for it when deciding whether to start.
-    // window.addEventListener('load', function () {
-    //     var doneTour = localStorage.getItem('EventTour') === 'Completed';
-    //     if (doneTour) {
-    //         return;
-    //     }
-    //     else {
-    //         startTour();
+    and check for it when deciding whether to start.
+    window.addEventListener('load', function () {
+        var doneTour = localStorage.getItem('EventTour') === 'Completed';
+        if (doneTour) {
+            return;
+        }
+        else {
+            startTour();
 
-    //         introguide.oncomplete(function () {
-    //             localStorage.setItem('EventTour', 'Completed');
-    //         });
+            introguide.oncomplete(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
 
-    //         introguide.onexit(function () {
-    //             localStorage.setItem('EventTour', 'Completed');
-    //         });
-    //     }
-    // });
-    //startTour();
+            introguide.onexit(function () {
+                localStorage.setItem('EventTour', 'Completed');
+            });
+        }
+    });
+    // startTour();
 </script>
