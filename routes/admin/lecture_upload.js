@@ -87,7 +87,38 @@ router.post('/create',upload.single('uploadFiles'), (req,res)=>{
            Topic: req.body.Topic
        });
    }
+   console.log(req.body.Topic);
+   lecture.find({topic:req.body.Topic}).then(found=>{
 
+           if (found.length > 0) {
+               console.log("true");
+               errors.push({message: "Duplicate topic, please delete previous entry"});
+               if (errors.length > 0) {
+                   console.log('errors');
+                   res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
+               }
+           } else {
+               let filename;
+               let file = req.files.file;
+               filename = Date.now() + '-' + file.name;
+               file.mv('./public/uploads/' + filename, (err) => {
+                   if (err) throw err;
+               })
+               req.app.locals.layout = 'lecture';
+               res.render('lecture/uploading/high_pass_filter', {
+                   files: filename,
+                   UserId: UserId,
+                   Topic: req.body.Topic
+               });
+
+
+           }
+
+<<<<<<< HEAD
+=======
+   });
+
+>>>>>>> parent of ef515b7... some change in __dirname
 
 });
 
@@ -122,7 +153,9 @@ router.delete('/:id',(req,res)=>{
     let UserId = UserID(req);
     var newDir = path.join(__dirname,'../../public/lecture/');
     lecture.findOne({_id: req.params.id}).then(result=>{
-
+        console.log('The data');
+        console.log(result);
+        console.log(newDir+result.file);
         fs.unlink(newDir+result.file,err=>{
             if(err) throw err;
         });
