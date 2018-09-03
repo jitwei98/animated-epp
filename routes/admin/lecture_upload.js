@@ -113,12 +113,10 @@ router.post('/create',upload.single('uploadFiles'), (req,res)=>{
 
 
            }
-
-<<<<<<< HEAD
-=======
+           
    });
 
->>>>>>> parent of ef515b7... some change in __dirname
+
 
 });
 
