@@ -28,7 +28,7 @@ router.get('/ohms_law',(req,res)=>{
 //     res.render('lecture/index_RLC');
 // });
 router.get('/RC_circuit',(req,res)=>{
-    res.render('lecture/RC_Circuit',{title:"RC Circuit (AC)",filename:"To be uploaded soon.pdf"  } );
+    res.render('lecture/RC_Circuit',{title:"RC Circuit (AC)",filename:"CG1111 - Preparation Week 3 Studio 1.pdf"  } );
     // lecture.findOne({topic:'RC_Circuit'}).then(content=>{
     //     res.render('lecture/RC_Circuit',{title:"RC Circuit (AC)",filename:content.file } );
     // })
