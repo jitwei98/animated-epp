@@ -51,7 +51,7 @@ router.get('/RLC_series_circuit',(req,res)=>{
 //
 // });
 router.get('/RC_circuit_DC',(req,res)=>{
-    res.render('lecture/RC_Circuit_DC',{title:"DC Transient - Capacitor",filename:"To be uploaded soon.pdf" } );
+    res.render('lecture/RC_Circuit_DC',{title:"DC Transient - Capacitor",filename:"Animated EPP Capacitor.pdf" } );
     // lecture.findOne({topic:'RC_Circuit_DC'}).then(content=>{
     //     res.render('lecture/RC_Circuit_DC',{title:"DC Transient - Capacitor",filename:content.file } );
     // })
