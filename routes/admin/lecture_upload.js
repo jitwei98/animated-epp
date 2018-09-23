@@ -81,8 +81,14 @@ router.post('/create', (req,res)=>{
                }
                let filename;
                let file = req.files.uploadFiles;
-               console.log(file);
-               var newDir = path.join(__dirname,'../../public/uploads/')
+               var newDir = path.join(__dirname,'../../public/uploads/');
+               const mkdirSync = function (newDir) {
+                   try {
+                       fs.mkdirSync(newDir);
+                   } catch (err) {
+                       if (err.code !== 'EEXIST') throw err
+                   }
+               };
                filename = Date.now() + '-' + req.files.uploadFiles.name;
                console.log(filename);
                file.mv(newDir + filename, (err) => {
