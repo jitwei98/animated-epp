@@ -5,8 +5,7 @@ const User = require('../../models/user');
 const fs = require('fs');
 const lecture = require('../../models/lectures/lecture');
 const path = require('path');
-var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
+const fileUpload = require('express-fileupload');
 //overwrite default layout
 router.all('/*',(req,res,next)=>{
 
@@ -62,31 +61,9 @@ router.get('/create',(req,res)=>{
 });
 
 
-router.post('/create',upload.single('uploadFiles'), (req,res)=>{
-    console.log(req.file);
+router.post('/create', (req,res)=>{
     let errors =[];
     let UserId = UserID(req);
-   if(!req.file){
-       errors.push({message:"Please include the file"});
-       res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
-   }else{
-       let filename;
-       let file = req.file;
-       filename = Date.now() + '-' + file.originalname;
-       var newDir = path.join(__dirname,'../../public/uploads/')+ filename;
-       fs.rename(file.path, newDir, (err) => {
-           if (err) throw err;
-       });
-       // file.mv(newDir, (err) => {
-       //     if (err) throw err;
-       // });
-       req.app.locals.layout = 'lecture';
-       res.render('lecture/uploading/high_pass_filter', {
-           files: filename,
-           UserId: UserId,
-           Topic: req.body.Topic
-       });
-   }
    console.log(req.body.Topic);
    lecture.find({topic:req.body.Topic}).then(found=>{
 
@@ -98,11 +75,21 @@ router.post('/create',upload.single('uploadFiles'), (req,res)=>{
                    res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
                }
            } else {
+               if(!req.files) {
+                   errors.push({message: "Please include the file"});
+                   res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
+               }
                let filename;
-               let file = req.files.file;
-               filename = Date.now() + '-' + file.name;
-               file.mv('./public/uploads/' + filename, (err) => {
-                   if (err) throw err;
+               let file = req.files.uploadFiles;
+               console.log(file);
+               var newDir = path.join(__dirname,'../../public/uploads/')
+               filename = Date.now() + '-' + req.files.uploadFiles.name;
+               console.log(filename);
+               file.mv(newDir + filename, (err) => {
+                   if (err) {
+                       console.log(err);
+                       throw err;
+                   }
                })
                req.app.locals.layout = 'lecture';
                res.render('lecture/uploading/high_pass_filter', {
