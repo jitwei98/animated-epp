@@ -79,9 +79,11 @@ router.post('/create', (req,res)=>{
            } else {
                var form = new formidable.IncomingForm();
                var filename;
+               var newDir = path.join(__dirname, '../../public/uploads/');
+               form.uploadDir = newDir;
                form.parse(req, function (err, fields, files) {
                    var oldpath = files.filetoupload.path;
-                   var newDir = path.join(__dirname, '../../public/uploads/');
+
 
                    filename  = Date.now() + '-' + files.filetoupload.name;
                    var newpath = newDir + filename;
