@@ -21,6 +21,7 @@
     "express-session": "^1.15.6",
     "faker": "^4.1.0",
     "font-awesome": "^4.7.0",
+    "formidable": "^1.2.1",
     "handlebars": "^4.0.11",
     "intro.js": "^2.9.3",
     "introjs": "^0.2.2",
@@ -31,5 +32,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pdfjs-dist": "^2.0.489"
+  },
+  "devDependencies": {
+    "webpack": "^4.20.1"
   }
 }

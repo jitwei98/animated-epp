@@ -40,7 +40,7 @@ app.set('view engine', 'handlebars');
 //Upload MiddleWare
 
 
-app.use(fileUpload());
+//app.use(fileUpload());
 
 //body-parser
 app.use(bodyParser.json());

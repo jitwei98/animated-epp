@@ -5,7 +5,8 @@ const User = require('../../models/user');
 const fs = require('fs');
 const lecture = require('../../models/lectures/lecture');
 const path = require('path');
-const fileUpload = require('express-fileupload');
+var formidable = require('formidable');
+//const fileUpload = require('express-fileupload');
 //overwrite default layout
 router.all('/*',(req,res,next)=>{
 
@@ -64,8 +65,9 @@ router.get('/create',(req,res)=>{
 router.post('/create', (req,res)=>{
     let errors =[];
     let UserId = UserID(req);
-   console.log(req.body.Topic);
-   lecture.find({topic:req.body.Topic}).then(found=>{
+    //console.log(req);
+   // console.log(req.body.Topic);
+   lecture.find({topic:"low_pass_filter"}).then(found=>{
 
            if (found.length > 0) {
                console.log("true");
@@ -75,38 +77,53 @@ router.post('/create', (req,res)=>{
                    res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
                }
            } else {
-               if(!req.files) {
-                   errors.push({message: "Please include the file"});
-                   res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
-               }
-               let filename;
-               let file = req.files.uploadFiles;
-               var newDir = path.join(__dirname,'../../public/uploads/');
-               const mkdirSync = function (newDir) {
-                   try {
-                       fs.mkdirSync(newDir);
-                   } catch (err) {
-                       if (err.code !== 'EEXIST') throw err
-                   }
-               };
-               filename = Date.now() + '-' + req.files.uploadFiles.name;
-               console.log(filename);
-               file.mv(newDir + filename, (err) => {
-                   if (err) {
-                       console.log(err);
-                       throw err;
-                   }
-               })
-               req.app.locals.layout = 'lecture';
-               res.render('lecture/uploading/high_pass_filter', {
-                   files: filename,
-                   UserId: UserId,
-                   Topic: req.body.Topic
+               var form = new formidable.IncomingForm();
+               var filename;
+               form.parse(req, function (err, fields, files) {
+                   var oldpath = files.filetoupload.path;
+                   var newDir = path.join(__dirname, '../../public/uploads/');
+
+                   filename  = Date.now() + '-' + files.filetoupload.name;
+                   var newpath = newDir + filename;
+                    console.log("this is first" + filename);
+                   fs.rename(oldpath, newpath, function (err) {
+                       if (err) throw err;
+                       });
+                   req.app.locals.layout = 'lecture';
+                   console.log(filename);
+                   res.render('lecture/uploading/high_pass_filter', {
+                       files: filename,
+                       UserId: UserId,
+                       Topic: "low_pass_filter",
+                   });
                });
+                   // if(!req.files) {
+                   //     errors.push({message: "Please include the file"});
+                   //     res.render('admin/lecture_upload/create', {UserId: UserId, errors: errors});
+                   // }
+                   // let filename;
+                   // let file = req.files.uploadFiles;
+                   // var newDir = path.join(__dirname,'../../public/uploads/');
+                   // const mkdirSync = function (newDir) {
+                   //     try {
+                   //         fs.mkdirSync(newDir);
+                   //     } catch (err) {
+                   //         if (err.code !== 'EEXIST') throw err
+                   //     }
+                   // };
+                   // filename = Date.now() + '-' + req.files.uploadFiles.name;
+                   // console.log(filename);
+                   // file.mv(newDir + filename, (err) => {
+                   //     if (err) {
+                   //         console.log(err);
+                   //         throw err;
+                   //     }
+                   // })
+
+               }
 
 
-           }
-           
+
    });
 
 
