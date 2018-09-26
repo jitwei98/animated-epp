@@ -87,12 +87,16 @@ router.post('/create', (req,res)=>{
 
                    filename  = Date.now() + '-' + files.filetoupload.name;
                    var newpath = newDir + filename;
+                   var readstream = fs.createReadStream(files.filetoupload.path);
+                   var writeStream = fs.createWriteStream(newpath);
+                   readstream.pipe(writeStream);
+                   readstream.on('end',function(){  fs.unlinkSync(files.filetoupload.path); });
                     console.log("this is first" + filename);
-                   fs.rename(oldpath, newpath, function (err) {
-                       if (err) throw err;
-                       });
-                   req.app.locals.layout = 'lecture';
-                   console.log(filename);
+                   // fs.rename(oldpath, newpath, function (err) {
+                   //     if (err) throw err;
+                   //     });
+                   // req.app.locals.layout = 'lecture';
+                   // console.log(filename);
                    res.render('lecture/uploading/high_pass_filter', {
                        files: filename,
                        UserId: UserId,
