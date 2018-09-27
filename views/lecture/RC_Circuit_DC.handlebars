@@ -17,7 +17,7 @@
                     <div class="container ml-3 btn-group" role="group" aria-label="Basic example"  data-step="3" data-intro="Click button to show or hide curves">
                         <button id="DischargeButton" class="btn btn-secondary " >Discharge</button>
                         <button id="ChargingButton" class="btn btn-secondary">Charge</button>
-                        <button id="a1" class="btn btn-secondary" >T=RC</button>
+                        <button id="a1" class="btn btn-secondary">T=RC</button>
                         <button id="a5" class="btn btn-secondary">T=5RC</button>
                     </div>
 
@@ -244,13 +244,13 @@
 			// TODO: different suffix, ie k, M
 			y += (deltaY/=100);
 			y = y >= 1 ? y : 1; // lower bound
-			y = y <= 100 ? y : 100; // upper bound
+			y = y <= 10 ? y : 10; // upper bound
 			resistor.textContent = Math.round(y) + 'k';
 			document.getElementById("Res").value = Math.round(y);
 		} else if (component === 3) {
 			y += (deltaY/=100);
 			y = y >= 1 ? y : 1; // lower bound
-			y = y <= 100 ? y : 100; // upper bound
+			y = y <= 10 ? y : 10; // upper bound
 			capacitor.textContent = y.toFixed(2) + 'u';
 			document.getElementById("Cap").value = y.toFixed(2);
 		}
