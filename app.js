@@ -16,7 +16,7 @@ const intro = require('intro.js');
 const fileUpload = require('express-fileupload');
 mongoose.promiose = global.Promise;
 
-mongoose.connect(mongoDbUrl)
+mongoose.connect(mongoDbUrl, { useNewUrlParser: true })
     .then(db=>{
         console.log('Connected to mongodb');
     })
