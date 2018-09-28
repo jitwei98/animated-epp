@@ -1,33 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="quiz-container">
-    <div id="quiz"></div>
+<head>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Animated epp</title>
+    <link rel="shortcut icon" href="/pic/robot.png" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="/css/3-col-portfolio.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <!--<link href="/css/blog-home.css" rel="stylesheet">-->
+    <link href="/css/quiz_draft_stylesheet.css" rel="stylesheet">
+    <!-- TODO: highlight the correct selection -->
+</head>
+
+<body>
+{{>home/home-nav}}
+
+    <form>
+        {{#question posts TotalMark}}
+            {{question}}
+        {{/question}}
+
+        <div id="Mark"  style="display:none;"></div>
+
+        {{#each errors}}
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{message}}
+            </div>
+        {{/each}}
+        <div  class="form-group" style="display:none;" ><input type="text" cols="30" rows="10" class="form-control" name="questionBank" id='questionBank' value='{{questionBank}}'></div>
+
+
+    </form>
+<div class="card m-3">
+<!--<button id="previous">Previous Question</button>-->
+<!--<button id="next">Next Question</button>-->
+<!--<button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button>-->
+<!--<button id="checkAnswer">Check you answer</button>-->
 </div>
-<button id="previous">Previous Question</button>
-<button id="next">Next Question</button>
-<form>
-    {{#question posts TotalMark}}
-        {{question}}
-    {{/question}}
-
-    <div id="Mark"  style="display:none;"></div>
-
-    {{#each errors}}
-        <div class="alert alert-danger alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            {{message}}
-        </div>
-    {{/each}}
-    <div  class="form-group" style="display:none;" ><input type="text" cols="30" rows="10" class="form-control" name="questionBank" id='questionBank' value='{{questionBank}}'></div>
-    <!--<button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button>-->
-
-
-</form>
-<button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button>
-<button id="checkAnswer">Check you answer</button>
-
-<div class="pagination" id="pagination"></div>
-
+<footer class="footer"><div class="pagination container text-center" id="pagination"></div></footer>
 
 
 <div class="modal fade" id="emptyQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -41,7 +63,7 @@
         </div>
     </div>
 </div>
-
+</body>
 <script>
     // $('#testing').on('click',(event)=>{
     //     event.preventDefault();
@@ -52,6 +74,7 @@
     //     event.stopPropagation();
     // });
     $('#submit').on('click',(event)=>{
+        console.log("hello")
         let count =0;
         for(let i=0;i<{{TotalMark}};i++){
             for(let j=0;j<4;j++){
@@ -121,12 +144,12 @@
 
     function dynamicPage(){
         var out ="";
-        out += "<a href=\"#\" onclick='showPreviousSlide();'>&laquo;</a>";
+        out += "<a href='#' id='prev-qn' onclick='showPreviousSlide();' >Prev</a>";
         for(let i=0;i<{{TotalMark}};i++){
             var ind = i+1;
-            out += "<a href=\"#\" id=p"+ i +" onclick='showSlide("+i+")'>"+ind+"</a>"
+            out += "<a href='#' id=p"+ i +" onclick='showSlide("+i+")' class='qnno'>"+ind+"</a>"
         }
-        out += "<a href=\"#\" onclick='showNextSlide();'>&raquo;</a>"
+        out += "<a href='#' onclick='showNextSlide();' id='next-qn' style='margin-left: 20px; opacity: 1.0; cursor: pointer;'>Next</a>"
         document.getElementById('pagination').innerHTML = out;
     }
     dynamicPage();
@@ -134,10 +157,15 @@
     //const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
     function showSlide(n) {
+        let page = "p" + currentSlide;
+        document.getElementById(page).classList.remove("active");
+        page = "p" + n;
+        document.getElementById(page).classList.add("active");
+        // page = "p" + n;
+        // page.classList.add("qnno active");
         slides[currentSlide].classList.remove("active-slide");
         slides[n].classList.add("active-slide");
         currentSlide = n;
-
         if (currentSlide === 0) {
             previousButton.style.display = "none";
             checkAnswer.style.display = 'none';

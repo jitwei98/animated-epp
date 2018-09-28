@@ -3,18 +3,21 @@ const router  = express.Router();
 const Post = require('../../models/post');
 const {isEmpty} = require('../../helpers/upload-helper');
 const {userAuthenticated} = require('../../helpers/authentication');
-const {question} = require('../../helpers/quiz-helper')
+//const {question} = require('../../helpers/quiz-helper')
+const {question} = require('../../helpers/quiz-helper-new');
 const User = require('../../models/user');
 //overwrite default layout
 router.all('/*',(req,res,next)=>{
-    req.app.locals.layout = 'admin';
+    req.app.locals.layout = 'quiz';
     next();
 });
 
 router.get('/',(req,res)=>{
    res.render('admin/posts/quiz_landingPage');
-   // res.render('admin/posts/quiz.handlebars');
+
+   //res.render('admin/posts/quiz_draft');
 });
+
 
 router.post('/',(req,res)=>{
     var questionBank =[];
@@ -45,7 +48,7 @@ router.post('/',(req,res)=>{
             if(totalMark>posts.length){
                 totalMark= posts.length;
             }
-            res.render('admin/posts/quiz_user',{posts:posts,question,TotalMark:totalMark,questionBank:questionBank});
+                res.render('admin/posts/quiz_user',{posts:posts,question,TotalMark:totalMark,questionBank:questionBank});
         }else{
             console.log('no question');
             res.render('home/index');

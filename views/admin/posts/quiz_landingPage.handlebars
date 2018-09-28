@@ -1,18 +1,41 @@
-<form action="/quiz_landing" method="post" >
-    <label id="test">123</label>
-    <input type="checkbox" name="RLC_Circuit" value="RLC_Circuit">RLC circuit<br>
-    <input type="checkbox" name="ohmLaw" value="ohmLaw">Ohm's Law<br>
-    <input type="checkbox" name="filter" value="filter">Filter<br>
-    <input type="checkbox" name="TEC" value="TEC">Thevenin Equivalent Circuit<br>
-    <div class="form-group">
-        <label for="questionNo"> Category</label>
-        <select name="questionNo" id="questionNo" class="form-control">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-        </select>
-    </div>
-    <input type="submit" value="Submit">
-</form>
+<head>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Animated epp</title>
+    <link rel="shortcut icon" href="/pic/robot.png" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/3-col-portfolio.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/blog-home.css" rel="stylesheet">
+
+    <!-- TODO: highlight the correct selection -->
+</head>
+<body>
+{{>home/home-nav}}
+    <form action="/quiz" method="post" >
+        <input type="checkbox" name="RLC_Circuit" value="RLC_Circuit">RLC circuit<br>
+        <input type="checkbox" name="ohmLaw" value="ohmLaw">Ohm's Law<br>
+        <input type="checkbox" name="filter" value="filter">Filter<br>
+        <input type="checkbox" name="TEC" value="TEC">Thevenin Equivalent Circuit<br>
+        <div class="form-group">
+            <label for="questionNo"> Category</label>
+            <select name="questionNo" id="questionNo" class="form-control">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>

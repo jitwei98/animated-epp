@@ -51,7 +51,7 @@ router.get('/create',(req,res)=>{
         if(user){
             Post.find({}).then(posts=>{
                 if(user.authentication.toString() == "lecturer" ){
-                    res.render('admin/posts/create',{UserId:UserId,testing:"hello"});
+                    res.render('admin/posts/create',{UserId:UserId});
                 }else{
                     req.app.locals.layout = 'home';
                     res.render('home/index');
@@ -87,12 +87,18 @@ router.post('/create',(req,res)=>{
             UserId:Userid,
         })
     }else {
-        console.log(req.body.answer_hint);
-        console.log(req.body.dp);
         const newPost = new Post({
             question:req.body.question,
             answer:req.body.answer,
             category:req.body.category,
+            dp:req.body.dp,
+            answer_hint:req.body.answer_hint,
+            wrongAnswer1:req.body.wrongAnswer1,
+            wrongAnswer1_hint:req.body.wrongAnswer1_hint,
+            wrongAnswer2:req.body.wrongAnswer2,
+            wrongAnswer2_hint:req.body.wrongAnswer2_hint,
+            wrongAnswer3:req.body.wrongAnswer3,
+            wrongAnswer3_hint:req.body.wrongAnswer3_hint,
         });
 
         newPost.save().then(datasaved => {
