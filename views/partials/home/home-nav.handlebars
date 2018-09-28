@@ -48,9 +48,13 @@
         var x = document.getElementById('admin');
         x.style.display = "none";
         if("{{authentication}}" === "lecturer"){
-            x.style.display = "block";
-            console.log('here');
+            sessionStorage.setItem("Right","lecturer");
+            sessionStorage.setItem("id","{{id}}");
+            if(sessionStorage.getItem('Right') === 'lecturer') {
+                x.style.display = "block";
+            }
         }
     }
+
     showOrHide();
 </script>

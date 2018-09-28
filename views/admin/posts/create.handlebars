@@ -2,17 +2,14 @@
 {{#each errors}}
     <div class="alert alert-danger">{{message}}</div>
 {{/each}}
-<form action="/admin/posts/{{UserId}}/create" method="post" enctype="multipart/form-data">
-
+<form action="/admin/posts/{{UserId}}/create" method="post" >
+    <label>this is a lael{{UserId}}</label>
 
     <div class="form-group">
         <label for="question"> Question</label>
         <input name="question" type="text" class="form-control" id="question" placeHolder="Enter Question" >
     </div>
-    <div class="form-group">
-        <label for="answer"> Answer(Cannot be zero)</label>
-        <input name="answer" type="text" class="form-control" id="title" placeHolder="Enter Answer" >
-    </div>
+
     <div class="form-group">
         <label for="category"> Category</label>
         <select name="category" id="category" class="form-control">
@@ -23,9 +20,47 @@
         </select>
     </div>
 
+    <div class="form-group">
+        <label for="dp">Decimal place of ans(help to randomise answer</label>
+        <select name="dp" id="dp" class="form-control">
+            <option value="0">Whole Nmber</option>
+            <option value="1">1 DP</option>
+            <option value="2">2 DP</option>
+            <option value="3">3 DP</option>
+            <option value="4">4 DP</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="answer"> Answer(Cannot be zero)</label>
+        <input name="answer" type="text" class="form-control" id="answer" placeHolder="Enter Answer" >
+        <input name="answer_hint" type="text" class="form-control" id="answer_hint" placeholder="Enter hint">
+    </div>
+
+    <div class="form-group">
+        <label for="wrongAnswer1">Wrong Answer 1(can be left blank)</label>
+        <input name="wrongAnswer1" type="text" class="form-control" id="wrongAnswer1" placeholder="Enter first wrong answer">
+        <input name="wrongAnswer1_hint" type="text" class="form-control" id="wrongAnswer1_hint" placeholder="Enter the reason">
+    </div>
+
+    <div class="form-group">
+        <label for="wrongAnswer2">Wrong Answer 2(can be left blank)</label>
+        <input name="wrongAnswer2" type="text" class="form-control" id="wrongAnswer2" placeholder="Enter second wrong answer">
+        <input name="wrongAnswer2_hint" type="text" class="form-control" id="wrongAnswer2_hint" placeholder="Enter the reason">
+    </div>
+
+    <div class="form-group">
+        <label for="wrongAnswer3">Wrong Answer 3(can be left blank)</label>
+        <input name="wrongAnswer3" type="text" class="form-control" id="wrongAnswer3" placeholder="Enter third wrong answer">
+        <input name="wrongAnswer3_hint" type="text" class="form-control" id="wrongAnswer3_hint" placeholder="Enter the reason">
+    </div>
 
 
 
 
-    <button type="submit" class="btn btn-primary">Create Post</button>
+
+    <button type="submit" class="btn btn-primary">Add question</button>
 </form>
+<script>
+    console.log(sessionStorage.getItem('id'));
+</script>

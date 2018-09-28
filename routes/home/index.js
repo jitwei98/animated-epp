@@ -181,7 +181,7 @@ router.post('/login',(req,res,next)=>{
 
     passport.authenticate('local', {
         //console.log('hello2');
-        successRedirect: '/',
+        successRedirect:( '/',{testing: "test"}),
         failureRedirect: '/login',
         failureFlash: true
 

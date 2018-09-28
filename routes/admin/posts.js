@@ -3,7 +3,8 @@ const router  = express.Router();
 const Post = require('../../models/post');
 const {isEmpty} = require('../../helpers/upload-helper');
 const {userAuthenticated} = require('../../helpers/authentication');
-const {list,question,questionTracker} = require('../../helpers/handlebars-helper')
+//const {list,question,questionTracker} = require('../../helpers/handlebars-helper');
+const {list,question,questionTracker} = require('../../helpers/quiz-helper');
 const User = require('../../models/user');
 //overwrite default layout
 router.all('/*',(req,res,next)=>{
@@ -50,8 +51,7 @@ router.get('/create',(req,res)=>{
         if(user){
             Post.find({}).then(posts=>{
                 if(user.authentication.toString() == "lecturer" ){
-
-                    res.render('admin/posts/create',{UserId:UserId});
+                    res.render('admin/posts/create',{UserId:UserId,testing:"hello"});
                 }else{
                     req.app.locals.layout = 'home';
                     res.render('home/index');
@@ -84,10 +84,11 @@ router.post('/create',(req,res)=>{
     if(errors.length>0){
         res.render('admin/posts/create',{
             errors:errors,
-
+            UserId:Userid,
         })
     }else {
-
+        console.log(req.body.answer_hint);
+        console.log(req.body.dp);
         const newPost = new Post({
             question:req.body.question,
             answer:req.body.answer,
