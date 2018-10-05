@@ -30,6 +30,7 @@
         {{#question posts TotalMark}}
             {{question}}
         {{/question}}
+        <p>Placeholder for questions</p>
 
         <div id="Mark"  style="display:none;"></div>
 
@@ -46,7 +47,7 @@
 <div class="card m-3">
 <!--<button id="previous">Previous Question</button>-->
 <!--<button id="next">Next Question</button>-->
-<!--<button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button>-->
+<!-- <button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button> -->
 <!--<button id="checkAnswer">Check you answer</button>-->
 </div>
 <footer class="footer"><div class="pagination container text-center" id="pagination"></div></footer>
@@ -147,9 +148,10 @@
         out += "<a href='#' id='prev-qn' onclick='showPreviousSlide();' >Prev</a>";
         for(let i=0;i<{{TotalMark}};i++){
             var ind = i+1;
-            out += "<a href='#' id=p"+ i +" onclick='showSlide("+i+")' class='qnno'>"+ind+"</a>"
+            out += "<a href='#' id=p"+ i +" onclick='showSlide("+i+")' class='qnno'>"+ind+"</a>";
         }
-        out += "<a href='#' onclick='showNextSlide();' id='next-qn' style='margin-left: 20px; opacity: 1.0; cursor: pointer;'>Next</a>"
+        out += "<a href='#' onclick='showNextSlide();' id='next-qn' style='margin-left: 20px; opacity: 1.0; cursor: pointer;'>Next</a>";
+        out += "<a href='#' onclick='' id='submit' style='margin-left: 90%; opacity: 1.0; cursor: pointer;'>Submit</a>"
         document.getElementById('pagination').innerHTML = out;
     }
     dynamicPage();
