@@ -25,6 +25,7 @@ const PostSchema = new Schema({
     },
     wrongAnswer1:{
         type:String,
+        default:null,
     },
     wrongAnswer1_hint:{
         type:String,

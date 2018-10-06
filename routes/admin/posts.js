@@ -87,17 +87,33 @@ router.post('/create',(req,res)=>{
             UserId:Userid,
         })
     }else {
+        let wa1,wa2,wa3;
+        if(req.body.wrongAnswer1.trim() === ""){
+            wa1 = null
+        }else{
+            wa1 = req.body.wrongAnswer1;
+        }
+        if(req.body.wrongAnswer2.trim() === ""){
+            wa2 = null
+        }else{
+            wa2 = req.body.wrongAnswer2;
+        }
+        if(req.body.wrongAnswer3.trim() === ""){
+            wa3 = null
+        }else{
+            wa3 = req.body.wrongAnswer3;
+        }
         const newPost = new Post({
             question:req.body.question,
             answer:req.body.answer,
             category:req.body.category,
             dp:req.body.dp,
             answer_hint:req.body.answer_hint,
-            wrongAnswer1:req.body.wrongAnswer1,
+            wrongAnswer1:wa1,
             wrongAnswer1_hint:req.body.wrongAnswer1_hint,
-            wrongAnswer2:req.body.wrongAnswer2,
+            wrongAnswer2:wa2,
             wrongAnswer2_hint:req.body.wrongAnswer2_hint,
-            wrongAnswer3:req.body.wrongAnswer3,
+            wrongAnswer3:wa3,
             wrongAnswer3_hint:req.body.wrongAnswer3_hint,
         });
 

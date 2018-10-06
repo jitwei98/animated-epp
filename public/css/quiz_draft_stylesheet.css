@@ -14,8 +14,9 @@ body {
 }
 
 #quiz-container {
+  position: relative;
   width: 80%;
-  margin-top: 60px; /* can be any % also, adjust accordingly/ */
+  margin-top: 33px; /* can be any % also, adjust accordingly/ */
   padding-top: 30px;
 }
 
@@ -53,6 +54,12 @@ body {
 .active-slide{
   opacity: 1;
   z-index: 2;
+}
+
+.btn-sm{
+  margin-top: 10px  ;
+  height:40px;
+
 }
 
 /*#prev-qn {*/

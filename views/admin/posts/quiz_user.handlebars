@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Animated epp</title>
-    <link rel="shortcut icon" href="/pic/robot.png" />
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <!--<link href="/css/3-col-portfolio.css" rel="stylesheet">-->
-
-    <!-- Custom styles for this template -->
-    <!--<link href="/css/blog-home.css" rel="stylesheet">-->
-    <link href="/css/quiz_draft_stylesheet.css" rel="stylesheet">
-    <!-- TODO: highlight the correct selection -->
-</head>
-
-<body>
-{{>home/home-nav}}
 
     <form>
         {{#question posts TotalMark}}
             {{question}}
         {{/question}}
-        <p>Placeholder for questions</p>
 
         <div id="Mark"  style="display:none;"></div>
 
@@ -44,27 +17,20 @@
 
 
     </form>
-<div class="card m-3">
-<!--<button id="previous">Previous Question</button>-->
-<!--<button id="next">Next Question</button>-->
-<!-- <button id="submit"  type="submit" data-toggle="modal" data-target="#emptyQuestion">Submit Quiz</button> -->
-<!--<button id="checkAnswer">Check you answer</button>-->
-</div>
 <footer class="footer"><div class="pagination container text-center" id="pagination"></div></footer>
 
 
-<div class="modal fade" id="emptyQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">You have not answered all the questions. Are you sure you want to end the quiz?</div>
-            <div class="modal-footer">
-                <div><a class="btn btn-primary" type="button" data-dismiss="modal" onclick="checkBackEnd();" >Yes</a></div>
-                <div><a class="btn btn-secondary" type="button" data-dismiss="modal">No</a></div>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
+<!--<div class="modal fade" id="emptyQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-dialog" role="document">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-body">You have not answered all the questions. Are you sure you want to end the quiz?</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<div><a class="btn btn-primary" type="button" data-dismiss="modal" onclick="checkBackEnd();" >Yes</a></div>-->
+                <!--<div><a class="btn btn-secondary" type="button" data-dismiss="modal">No</a></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <script>
     // $('#testing').on('click',(event)=>{
     //     event.preventDefault();
@@ -74,70 +40,88 @@
     //     event.preventDefault();
     //     event.stopPropagation();
     // });
-    $('#submit').on('click',(event)=>{
-        console.log("hello")
-        let count =0;
-        for(let i=0;i<{{TotalMark}};i++){
-            for(let j=0;j<4;j++){
-                var ID = i*10+j;
-                if(document.getElementById(ID).checked){
-                    count ++;
-                }
-            }
-        }
-        if(count === {{TotalMark}}){
-            $('#submit').removeAttr('data-toggle');
-            $('#submit').removeAttr('data-target');
-            checkBackEnd();
-            console.log('hi')
-        }else{
-            console.log('no')
-        }
-    });
-    function checkBackEnd() {
-        //event.preventDefault();
-        //event.stopPropagation();
+    <!--$('#submit').on('click',(event)=>{-->
+        <!--console.log("hello")-->
+        <!--let count =0;-->
+        <!--for(let i=0;i<{{TotalMark}};i++){-->
+            <!--for(let j=0;j<4;j++){-->
+                <!--var ID = i*10+j;-->
+                <!--if(document.getElementById(ID).checked){-->
+                    <!--count ++;-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+        <!--if(count === {{TotalMark}}){-->
+            <!--$('#submit').removeAttr('data-toggle');-->
+            <!--$('#submit').removeAttr('data-target');-->
+            <!--checkBackEnd();-->
+            <!--console.log('hi')-->
+        <!--}else{-->
+            <!--console.log('no')-->
+        <!--}-->
+    <!--});-->
 
-        var mark =0;
-        $.ajax({
-            url: '/quiz_landing/answer',
-            type:'POST',
-            contentType:'application/json',
-            data: JSON.stringify({"questionArr": $("#quesionArray").val(),"questionBank":$("#questionBank").val(),"TotalMark":{{TotalMark}} }),
-            success:function (res) {
-                let arr = res.split(",");
-                for(let i=0;i<{{TotalMark}};i++){
-                    var pID = 'p' + i;
-                    document.getElementById(pID).style.backgroundColor  = 'red';
-                    for(let j=0;j<4;j++){
-                        var ID = i*10+j;
-                        var qID = 'Q' + ID;
+        function checkBackEnd() {
+            //event.preventDefault();
+            //event.stopPropagation();
+            console.log('hello');
+            var mark = 0;
+            $.ajax({
+                url: '/quiz/answer',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    "questionArr": $("#questionArray").val(),
+                    "questionBank": $("#questionBank").val(),
+                    "TotalMark":{{TotalMark}} }),
+                success: function (res) {
+                    console.log(res.ansArr);
+                    let arr = res.ansArr.split(",");
+                    let hintArr = res.hintArr.split(",");
+                    for (let i = 0; i <{{TotalMark}}; i++) {
+                        var pID = 'p' + i;
+                        document.getElementById(pID).style.backgroundColor = 'red';
+                        for (let j = 0; j < 4; j++) {
+                            var ID = i * 10 + j;
+                            var qID = 'Q' + ID;
 
 
-                        if(document.getElementById(ID).value == arr[i]){
-                            document.getElementById(qID).style.backgroundColor  = 'lightgreen';
-                        }
-                        if(document.getElementById(ID).checked){
-                            if(document.getElementById(ID).value == arr[i]){
-                                mark ++;
-                                document.getElementById(pID).style.backgroundColor  = 'lightgreen';
-                            }else{
-                                document.getElementById(qID).style.backgroundColor  = 'red';
+                            if (document.getElementById(ID).value == arr[i]) {
+                                document.getElementById(qID).style.backgroundColor = 'lightgreen';
+                                let hint = checkForhint(document.getElementById(ID).value,hintArr);
+                                document.getElementById(qID).innerHTML += "    " + hint;
+                            }
+                            if (document.getElementById(ID).checked) {
+                                if (document.getElementById(ID).value == arr[i]) {
+                                    mark++;
+                                    document.getElementById(pID).style.backgroundColor = 'lightgreen';
+                                } else {
+                                    document.getElementById(qID).style.backgroundColor = 'red';
+                                    let hint = checkForhint(document.getElementById(ID).value,hintArr);
+                                    document.getElementById(qID).innerHTML += "   "+ hint;
 
+
+                                }
                             }
                         }
                     }
+                },
+
+            }).done(() => {
+                showSlide(slides.length - 1);
+                document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
+                document.getElementById('Mark').style.display = "inline-block";
+            });
+
+        }
+
+        function checkForhint(value,hintArr) {
+            for(let i=0;i<hintArr.length;i++){
+                if(hintArr[i] == value){
+                    return hintArr[i+1];
                 }
-            },
-
-        }).done(()=>{
-            showSlide(slides.length-1);
-            document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
-            document.getElementById('Mark').style.display ="inline-block";
-        });
-
-    }
-
+            }
+        }
 </script>
 
 <script>
@@ -151,7 +135,7 @@
             out += "<a href='#' id=p"+ i +" onclick='showSlide("+i+")' class='qnno'>"+ind+"</a>";
         }
         out += "<a href='#' onclick='showNextSlide();' id='next-qn' style='margin-left: 20px; opacity: 1.0; cursor: pointer;'>Next</a>";
-        out += "<a href='#' onclick='' id='submit' style='margin-left: 90%; opacity: 1.0; cursor: pointer;'>Submit</a>"
+        out += "<Button href='#' class='btn btn-outline-primary btn-sm' onclick='checkBackEnd();' id='submit' style='margin-left: 90%; opacity: 1.0; cursor: pointer;'>Submit</Button>"
         document.getElementById('pagination').innerHTML = out;
     }
     dynamicPage();
@@ -168,28 +152,28 @@
         slides[currentSlide].classList.remove("active-slide");
         slides[n].classList.add("active-slide");
         currentSlide = n;
-        if (currentSlide === 0) {
-            previousButton.style.display = "none";
-            checkAnswer.style.display = 'none';
-        } else {
-            previousButton.style.display = "inline-block";
-            checkAnswer.style.display = 'none';
-        }
-
-        if (currentSlide === slides.length - 2) {
-            nextButton.style.display = "none";
-            submitButton.style.display = "inline-block";
-            checkAnswer.style.display = 'none';
-        }else if(currentSlide === slides.length - 1){
-            nextButton.style.display = "none";
-            previousButton.style.display = "none";
-            submitButton.style.display = "none";
-            checkAnswer.style.display ="inline-block";
-        }else {
-            nextButton.style.display = "inline-block";
-            submitButton.style.display = "none";
-            checkAnswer.style.display = 'none';
-        }
+        // if (currentSlide === 0) {
+        //     previousButton.style.display = "none";
+        //     checkAnswer.style.display = 'none';
+        // } else {
+        //     previousButton.style.display = "inline-block";
+        //     checkAnswer.style.display = 'none';
+        // }
+        //
+        // if (currentSlide === slides.length - 2) {
+        //     nextButton.style.display = "none";
+        //     submitButton.style.display = "inline-block";
+        //     checkAnswer.style.display = 'none';
+        // }else if(currentSlide === slides.length - 1){
+        //     nextButton.style.display = "none";
+        //     previousButton.style.display = "none";
+        //     submitButton.style.display = "none";
+        //     checkAnswer.style.display ="inline-block";
+        // }else {
+        //     nextButton.style.display = "inline-block";
+        //     submitButton.style.display = "none";
+        //     checkAnswer.style.display = 'none';
+        // }
     }
 
     function showNextSlide() {
@@ -212,7 +196,7 @@
 
     // on submit, show results
     //submitButton.addEventListener("click", showResults);
-    checkAnswer.addEventListener('click',firstSlide);
+    //checkAnswer.addEventListener('click',firstSlide);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
 </script>

@@ -5,20 +5,22 @@
 
     <thead>
         <tr>
-            <th>Id</th>
             <th>Question<button onclick="sortTable(1);">Sort</th>
-            <th>Answer<button onclick="sortTable(2);">Sort</th>
             <th>Category<button onclick="sortTable(3);">Sort</button></th>
+            <th>Answer<button onclick="sortTable(2);">Sort</th>
+            <th>Answer Hint</th>
+            <th>Answer Dp</th>
         </tr>
 
     </thead>
     <tbody>
         {{#each posts}}
         <tr>
-            <td>{{id}}</td>
             <td>{{question}}</td>
-            <td>{{answer}}</td>
             <td>{{category}}</td>
+            <td>{{answer}}</td>
+            <td>{{answer_hint}}</td>
+            <td>{{dp}}</td>
             <td><a href="/admin/posts/{{../UserId}}/edit/{{id}}" class="btn btn-info">Edit</a> </td>
             <td><form action="/admin/posts/{{../UserId}}/{{id}}?_method=DELETE" method="post">
                 <button type="submit" class="btn btn-danger">Delete</button>

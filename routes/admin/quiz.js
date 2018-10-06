@@ -63,10 +63,10 @@ router.post('/',(req,res)=>{
 router.post('/answer',(req,res)=>{
     let text2 = req.body.questionBank;
     let text = req.body.questionArr;
-
-    let arr = text.split(",");
     let questionBank = text2.split(',');
+    let arr = text.split(",");
     let ansArr ='';
+    let hintArr = '';
     Post.find({category:questionBank}).then(posts=>{
 
         var qesLen = req.body.TotalMark;
@@ -75,8 +75,44 @@ router.post('/answer',(req,res)=>{
             ansArr += posts[arr[i]].answer;
             ansArr +=',';
         }
+        for(let i=0;i<qesLen;i++){
+            if(posts[arr[i]].answer != null){
+                hintArr += posts[arr[i]].answer;
+            }
+            hintArr +=",";
+            if(posts[arr[i]].answer_hint != null){
+                hintArr += posts[arr[i]].answer_hint;
+            }
+            hintArr +=",";
+            if(posts[arr[i]].wrongAnswer1 != null){
+                hintArr += posts[arr[i]].wrongAnswer1;
+            }
+            hintArr += ",";
+            if(posts[arr[i]].wrongAnswer1_hint != null){
+                hintArr += posts[arr[i]].wrongAnswer1_hint;
+            }
+            hintArr += ",";
+            if(posts[arr[i]].wrongAnswer2 != null){
+                hintArr += posts[arr[i]].wrongAnswer2;
+            }
+            hintArr += ",";
+            if(posts[arr[i]].wrongAnswer2_hint != null){
+                hintArr += posts[arr[i]].wrongAnswer2_hint;
+            }
+            hintArr += ",";
+            if(posts[arr[i]].wrongAnswer3 != null){
+                hintArr += posts[arr[i]].wrongAnswer3;
+            }
+            hintArr += ",";
+            if(posts[arr[i]].wrongAnswer3_hint != null){
+                hintArr += posts[arr[i]].wrongAnswer3_hint;
+            }
+            hintArr += ",";
+
+        }
+        let array = {ansArr,hintArr};
         //res.status(200);
-        res.send(ansArr);
+        res.send(array);
         //        // res.render("empty",{posts:posts,list,question,count:count,TotalMark:qesLen,ansArr :ansArr});
         //       //  res.end();
         //res.send(`${ans} , ${arr[0]} ${posts[0].answer}`);
