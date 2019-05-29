@@ -8,34 +8,78 @@
     <title>Animated epp</title>
     <link rel="shortcut icon" href="/pic/robot.png" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form-mini.css">
 
-    <!-- Custom styles for this template -->
-    <link href="/css/3-col-portfolio.css" rel="stylesheet">
+    <style>
+        .main-content {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-color: #efefef;
+        }
 
-    <!-- Custom styles for this template -->
-    <link href="/css/blog-home.css" rel="stylesheet">
+        /* TODO: extend padding-bottom to the end of the page */
+        /* temp fix */
+        html {
+            /*background-color: #FFFFFF;*/
+        }
+    </style>
 
     <!-- TODO: highlight the correct selection -->
 </head>
 <body>
-{{>home/home-nav}}
-    <form action="/quiz" method="post" >
-        <input type="checkbox" name="RLC_Circuit" value="RLC_Circuit">RLC circuit<br>
-        <input type="checkbox" name="ohmLaw" value="ohmLaw">Ohm's Law<br>
-        <input type="checkbox" name="filter" value="filter">Filter<br>
-        <input type="checkbox" name="TEC" value="TEC">Thevenin Equivalent Circuit<br>
-        <div class="form-group">
-            <label for="questionNo"> Category</label>
-            <select name="questionNo" id="questionNo" class="form-control">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-            </select>
+    {{>home/home-nav}}
+
+
+    <div class="main-content">
+        <div class="form-mini-container">
+            
+            <h1>Topics</h1>
+
+            <form class="form-mini" method="post" action="/quiz">
+
+                <div class="form-row">
+                    <!-- <h4>Topics</h4> -->
+                    <!-- <br /> -->
+
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="RLC_Circuit" checked>
+                        <span>RLC circuit</span>
+                    </label>
+                    <br />
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="ohmLaw" checked>
+                        <span>Ohm's Law</span>
+                    </label>
+                    <br />
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="filter" checked>
+                        <span>Filter</span>
+                    </label>
+                    <br />
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="TEC" checked>
+                        <span>Thevenin Equivalent Circuit</span>
+                    </label>
+                </div>
+
+               <div class="form-row">
+                    <label>
+                        <select name="questionNo" id="questionNo">
+                            <option>Choose number of questions</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-row form-last-row">
+                    <button type="submit">Start</button>
+                </div>
+
+            </form>
         </div>
-        <input type="submit" value="Submit">
-    </form>
+    </div>
 
 </body>
