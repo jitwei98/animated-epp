@@ -247,8 +247,8 @@ router.post('/change_auth',(req,res)=>{
     });
 });
 passport.use(new NusOpenIDStrategy({
-        returnURL:'http://localhost:3000/auth/nus/return',
-        realm: 'http://localhost:3000/'
+        returnURL:'https://thawing-harbor-40612.herokuapp.com/auth/nus/return',
+        realm: 'https://thawing-harbor-40612.herokuapp.com/'
     },
     function(identifier, profile, done) {
         var openid = identifier.replace(/\/[^\/]*\\/, '/');
