@@ -31,23 +31,26 @@ module.exports = {
             out += '<div class="slide"><div class="form-group card m-3"><div class="question card-header" name=  QuestionSource' +randomQuestion +'>' + items[randomQuestion].question + "</div>\n" +
                 "<div class='answers'>";
             out += "<div class='card-body ml-3'>";
+            if(items[randomQuestion].image){
+                out +="<div> <img style='display:block; width:600px;height:300px;' id='base64image' src= 'data:image/jpeg;base64," + items[randomQuestion].image + " ' >" + "</div>";
+            }
             for(var j=0 ;j<4;j++){             //number of choice
 
                 ran =  randChose(ans,items[randomQuestion].dp);
                 var ID = i*10+j;
                 if (chooseTracker[0] == j){
-                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ans +"'"+ "name =Question"+ i +">"+ ans+ "ans"+  "</label></div>"
+                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ans +"'"+ "name =Question"+ i +">"+ ans + "  "+ "ans"+  "</label></div>"
                 }else if(items[randomQuestion].wrongAnswer1 !=null && chooseTracker[1] == j){
 
                     let ws1 = items[randomQuestion].wrongAnswer1;
                     console.log(ws1);
-                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ws1 +"'"+ "name =Question"+ i +">"+ ws1+ "ws1"+  "</label></div>"
+                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ws1 +"'"+ "name =Question"+ i +">"+ ws1+ "  "+ "ws1"+  "</label></div>"
                 } else if(items[randomQuestion].wrongAnswer2 !=null && chooseTracker[2] == j){
                     let ws2 = items[randomQuestion].wrongAnswer2;
-                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ws2 +"'"+ "name =Question"+ i +">"+ ws2+ "ws2"+  "</label></div>"
+                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ws2 +"'"+ "name =Question"+ i +">"+ ws2 +"  "+ "ws2"+  "</label></div>"
                 }else if(items[randomQuestion].wrongAnswer3 !=null && chooseTracker[3] == j){
                     let ws3 = items[randomQuestion].wrongAnswer3;
-                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ws3 +"'"+ "name =Question"+ i +">"+ ws3+ "ws3"+  "</label></div>"
+                    out +="<div class='form-group radio' id=Q"+ ID + "> <label><input type='radio' id="+ ID + " value='"+ ws3 +"'"+ "name =Question"+ i +">"+ ws3+  " "+ "ws3"+  "</label></div>"
                 }else{
                     out +="<div class='form-group radio' id=Q"+ ID + "><label><input type='radio' id="+ ID + " value='"+ ran +"'"+ "name =Question"+ i +">"+ ran + "</label></div>"
                 }

@@ -42,6 +42,9 @@ const PostSchema = new Schema({
     wrongAnswer3_hint:{
         type:String,
     },
+    image:{
+        type:Buffer
+    }
 
 
 

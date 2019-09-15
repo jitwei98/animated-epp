@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const {userAuthenticated} = require('../../helpers/authentication');
+const NusOpenIDStrategy = require('passport-nus-openid').Strategy;
 
 //app.use(passport.initialize());
 //app.use(passport.session());
@@ -245,7 +246,46 @@ router.post('/change_auth',(req,res)=>{
        }
     });
 });
+passport.use(new NusOpenIDStrategy({
+        returnURL:'http://localhost:3000/auth/nus/return',
+        realm: 'http://localhost:3000/'
+    },
+    function(identifier, profile, done) {
+        var openid = identifier.replace(/\/[^\/]*\\/, '/');
+        var identity = openid.substring(openid.lastIndexOf("/") + 1);
+        var name = profile.displayName;
+        var email = (profile.emails.length > 0) ? profile.emails[0].value : null;
 
+        User.findOne({
+            "openid": openid
+        }, function(err, user){
+            if(user === null) {
+                user = new User({
+                    "name": name,
+                    "email": email,
+                    "identity": identity,
+                    "openid": openid
+                });
+                user.save();
+            }
+            return done(null, user);
+        });
+    }
+));
+router.get('/nus',
+    passport.authenticate('nus-openid'));
 
-
+router.get('/auth/nus/return',(req,res,next)=>{
+        console.log(req.query);
+        req.session.user= {"username" : req.query["openid.sreg.fullname"],
+            "authentication" : "student",
+            "ID" : req.query["openid.sreg.nickname"]
+        };
+        next();
+    },
+    function(req, res) {
+        console.log(req.query["openid.sreg.fullname"]);
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    });
 module.exports = router;

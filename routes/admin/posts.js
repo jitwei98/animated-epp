@@ -6,6 +6,9 @@ const {userAuthenticated} = require('../../helpers/authentication');
 //const {list,question,questionTracker} = require('../../helpers/handlebars-helper');
 const {list,question,questionTracker} = require('../../helpers/quiz-helper');
 const User = require('../../models/user');
+var fs = require('fs');
+var multer = require('multer')
+var upload = multer()
 //overwrite default layout
 router.all('/*',(req,res,next)=>{
 
@@ -68,7 +71,10 @@ router.get('/create',(req,res)=>{
 
 });
 
-router.post('/create',(req,res)=>{
+router.post('/create', upload.any(),(req,res)=>{
+    let image = req.files[0];
+    let base64 = req.files[0].buffer.toString('base64');
+    // var body = fs.readFileSync(file);
     var url = req.baseUrl;
     if(url){
         var Userid = url.substring(url.lastIndexOf('/') + 1);
@@ -115,6 +121,7 @@ router.post('/create',(req,res)=>{
             wrongAnswer2_hint:req.body.wrongAnswer2_hint,
             wrongAnswer3:wa3,
             wrongAnswer3_hint:req.body.wrongAnswer3_hint,
+            image : base64
         });
 
         newPost.save().then(datasaved => {

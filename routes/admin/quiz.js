@@ -44,6 +44,7 @@ router.post('/',(req,res)=>{
             // console.log(posts.length);
             // console.log('question:')
             // console.log(posts);
+            console.log(posts);
             let totalMark = req.body.questionNo;
             if(totalMark>posts.length){
                 totalMark= posts.length;
