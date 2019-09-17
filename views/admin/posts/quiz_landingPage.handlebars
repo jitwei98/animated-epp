@@ -48,6 +48,7 @@
 </body>
 <script>
     function backToColor(classname) {
+        console.log(document.getElementById(classname).style.filter);
         if(document.getElementById(classname).style.filter == "grayscale(100%)"){
             document.getElementById(classname).style.filter = "grayscale(0%)";
         }
