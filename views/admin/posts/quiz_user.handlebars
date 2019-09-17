@@ -17,7 +17,7 @@
 
 
     </form>
-<footer class="footer"><div class="pagination container text-center" id="pagination"></div></footer>
+<footer class="footer"><div class="pagination container text-center" id="pagination" style="text-align:center;">></div></footer>
 
 
 <!--<div class="modal fade" id="emptyQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
@@ -92,7 +92,9 @@
                                 } else {
                                     document.getElementById(qID).style.backgroundColor = 'red';
                                     let hint = checkForhint(document.getElementById(ID).value,hintArr);
-                                    document.getElementById(qID).innerHTML += "   "+ hint;
+                                    if(hint){
+                                        document.getElementById(qID).innerHTML += "   "+ hint;
+                                    }
 
                                 }
                             }
@@ -100,7 +102,10 @@
                             if (document.getElementById(ID).value == arr[i]) {
                                 document.getElementById(qID).style.backgroundColor = 'lightgreen';
                                 let hint = checkForhint(document.getElementById(ID).value,hintArr);
-                                document.getElementById(qID).innerHTML += "    " + hint;
+                                if(hint){
+                                    document.getElementById(qID).innerHTML += "    " + hint;
+                                }
+
                             }
 
                             console.log(document.getElementById(ID));
