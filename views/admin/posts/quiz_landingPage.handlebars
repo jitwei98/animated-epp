@@ -25,8 +25,8 @@
         <form action="/quiz" method="post" >
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="RLC_Circuit" id="checkbox1" value="RLC_Circuit" style="display: none"><label class="form-check-label" for="checkbox1">
-                    <img class="card-title ohm" id="RLC" src="/pic/quiz_RLC.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("RLC"); >
-                    <figcaption>RLC circuit</figcaption></label>
+                    <img class="card-title ohm" id="RLC" src="/pic/quiz_RLC.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("RLC","RLCtext"); >
+                <figcaption><div id="RLCtext">RLC circuit</div></figcaption></label>
 
                 <input class="form-check-input" type="checkbox" name="ohmLaw" id="checkbox2" value="ohmLaw" style="display: none"><label class="form-check-label" for="checkbox2">
                 <img class="card-title ohm" id="ohm" src="/pic/quiz_ohm.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("ohm"); >
@@ -61,13 +61,15 @@
 </body>
 <script>
     let questionChoiceArr = {};
-    function backToColor(classname) {
+    function backToColor(classname,textName) {
         if(questionChoiceArr.classname){
             document.getElementById(classname).style.filter = "grayscale(100%)";
+            document.getElementById(textName).style = "font-style: italic";
             questionChoiceArr.classname =0;
         }else{
             questionChoiceArr.classname =1;
             document.getElementById(classname).style.filter = "grayscale(0%)";
+            document.getElementById(textName).style = "font-style: normal";
         }
         console.log(document.getElementById(classname).style.filter);
 
