@@ -25,7 +25,7 @@
         <form action="/quiz" method="post" >
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="RLC_Circuit" id="checkbox1" value="RLC_Circuit" style="display: none"><label class="form-check-label" for="checkbox1">
-                    <img class="card-title ohm" id="RLC" src="/pic/quiz_RLC.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("RLC","RLCtext"); >
+                    <img class="card-title ohm" id="RLC" src="/pic/quiz_RLC.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("RLC","RLCtext","checkbox1"); >
                 <figcaption><div id="RLCtext">RLC circuit</div></figcaption></label>
 
                 <input class="form-check-input" type="checkbox" name="ohmLaw" id="checkbox2" value="ohmLaw" style="display: none"><label class="form-check-label" for="checkbox2">
@@ -61,8 +61,8 @@
 </body>
 <script>
     let questionChoiceArr = {};
-    function backToColor(classname,textName) {
-        if(questionChoiceArr.classname){
+    function backToColor(classname,textName,checkBoxName) {
+        if(document.getElementById(checkBoxName).checked){
             document.getElementById(classname).style.filter = "grayscale(100%)";
             document.getElementById(textName).style = "font-style: normal";
             document.getElementById(textName).style.backgroundColor = "#FFFFFF";
