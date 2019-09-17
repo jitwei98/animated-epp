@@ -64,7 +64,6 @@
         function checkBackEnd() {
             //event.preventDefault();
             //event.stopPropagation();
-            console.log('hello');
             var mark = 0;
             $.ajax({
                 url: '/quiz/answer',
@@ -114,9 +113,10 @@
 
             }).done(() => {
                 console.log("hiii");
-                showSlide(slides.length - 1);
-                document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
+                // showSlide(slides.length - 1);
                 document.getElementById('Mark').style.display = "inline-block";
+                document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
+                console.log("2");
             });
 
         }
