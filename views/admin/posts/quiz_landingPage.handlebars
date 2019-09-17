@@ -52,11 +52,11 @@
     let questionChoiceArr = {};
     function backToColor(classname) {
         if(questionChoiceArr.classname){
-            document.getElementById(classname).style.filter = "grayscale(0%)";
+            document.getElementById(classname).style.filter = "grayscale(100%)";
             questionChoiceArr.classname =0;
         }else{
             questionChoiceArr.classname =1;
-            document.getElementById(classname).style.filter = "grayscale(100%)";
+            document.getElementById(classname).style.filter = "grayscale(0%)";
         }
         console.log(document.getElementById(classname).style.filter);
 
