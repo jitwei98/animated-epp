@@ -85,11 +85,6 @@
                             var ID = i * 10 + j;
                             var qID = 'Q' + ID;
 
-                            if (document.getElementById(ID).value == arr[i]) {
-                                document.getElementById(qID).style.backgroundColor = 'lightgreen';
-                                let hint = checkForhint(document.getElementById(ID).value,hintArr);
-                                document.getElementById(qID).innerHTML += "    " + hint;
-                            }
                             if (document.getElementById(ID).checked) {
                                 if (document.getElementById(ID).value == arr[i]) {
                                     mark++;
@@ -101,6 +96,13 @@
 
                                 }
                             }
+
+                            if (document.getElementById(ID).value == arr[i]) {
+                                document.getElementById(qID).style.backgroundColor = 'lightgreen';
+                                let hint = checkForhint(document.getElementById(ID).value,hintArr);
+                                document.getElementById(qID).innerHTML += "    " + hint;
+                            }
+
                             console.log(document.getElementById(ID));
                             console.log(mark);
                         }
