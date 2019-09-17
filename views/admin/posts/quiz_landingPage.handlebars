@@ -24,16 +24,33 @@
     <div class="container ml-5 pt-5">
         <form action="/quiz" method="post" >
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="RLC_Circuit" id="checkbox1" value="RLC_Circuit"><label class="form-check-label" for="checkbox1">RLC circuit</label><br />
+                <figure>
+                <input class="form-check-input" type="checkbox" name="RLC_Circuit" id="checkbox1" value="RLC_Circuit" style="display: none"><label class="form-check-label" for="checkbox1">
+                    <img class="card-title ohm" id="RLC" src="/pic/quiz_RLC.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("RLC"); >
+                    <figcaption>RLC circuit</figcaption></label>
+                </figure>
                 <figure>
                 <input class="form-check-input" type="checkbox" name="ohmLaw" id="checkbox2" value="ohmLaw" style="display: none"><label class="form-check-label" for="checkbox2">
                 <img class="card-title ohm" id="ohm" src="/pic/quiz_ohm.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("ohm"); >
                 <figcaption>Ohm's Law</figcaption></label>
                 </figure>
-                <br />
-                <input class="form-check-input" type="checkbox" name="filter" value="filter" id="checkbox3">
-                <label class="form-check-label" for="checkbox3">Filter</label><br />
-                <input class="form-check-input" type="checkbox" name="TEC" value="TEC" id="checkbox4"><label class="form-check-label" for="checkbox4">Thevenin Equivalent Circuit</label><br />
+
+                <figure>
+                    <input class="form-check-input" type="checkbox" name="filter" value="filter" id="checkbox3">
+                    <label class="form-check-label" for="checkbox3">
+                        <img class="card-title ohm" id="filter" src="/pic/quiz_filter.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("filter"); >
+                        <figcaption>Filter</figcaption>
+
+                    </label><br />
+                </figure>
+                <figure>
+                    <input class="form-check-input" type="checkbox" name="TEC" value="TEC" id="checkbox4">
+                    <label class="form-check-label" for="checkbox4">
+                        <img class="card-title ohm" id="TEC" src="/pic/quiz_TEC.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("TEC"); >
+                        <figcaption>Thevenin Equivalent Circuit</figcaption>
+                    </label><br />
+                </figure>
+
             </div>
             <div class="form-group">
                 <label for="questionNo"> Question number</label>
