@@ -73,7 +73,12 @@ router.get('/create',(req,res)=>{
 
 router.post('/create', upload.any(),(req,res)=>{
     let image = req.files[0];
-    let base64 = req.files[0].buffer.toString('base64');
+    let base64;
+    if(image){
+         base64 = req.files[0].buffer.toString('base64');
+    }else{
+         base64 = null;
+    }
     // var body = fs.readFileSync(file);
     var url = req.baseUrl;
     if(url){
