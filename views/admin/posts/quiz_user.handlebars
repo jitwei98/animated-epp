@@ -15,8 +15,25 @@
         {{/each}}
         <div  class="form-group" style="display:none;" ><input type="text" cols="30" rows="10" class="form-control" name="questionBank" id='questionBank' value='{{questionBank}}'></div>
 
-
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <div><a class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</a></div>
+                        <div><a class="btn btn-primary" href="/logout">Logout</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
+
 <footer class="footer"><div class="pagination container text-center" id="pagination" style="text-align:center;">></div></footer>
 
 
@@ -112,11 +129,11 @@
                 },
 
             }).done(() => {
-                console.log("hiii");
+
                 // showSlide(slides.length - 1);
                 document.getElementById('Mark').style.display = "inline-block";
                 document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
-                console.log("2");
+
             });
 
         }
@@ -137,7 +154,7 @@
             out += "<a href='#' id=p"+ i +" onclick='showSlide("+i+")' class='qnno'>"+ind+"</a>";
         }
         out += "<a href='#' onclick='showNextSlide();' id='next-qn' style='margin-left: 20px; opacity: 1.0; cursor: pointer;'>Next</a>";
-        out += "<Button href='#' class='btn btn-outline-primary btn-sm' onclick='checkBackEnd();' id='submit' style='margin-left: 90%; opacity: 1.0; cursor: pointer;'>Submit</Button>"
+        out += "<Button href='#' class='btn btn-outline-primary btn-sm' data-toggle='modal' data-target='#exampleModal' onclick='checkBackEnd();' id='submit' style='margin-left: 90%; opacity: 1.0; cursor: pointer;'>Submit</Button>"
         document.getElementById('pagination').innerHTML = out;
     }
     dynamicPage();
