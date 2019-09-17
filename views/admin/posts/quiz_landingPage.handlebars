@@ -65,13 +65,14 @@
         if(questionChoiceArr.classname){
             document.getElementById(classname).style.filter = "grayscale(100%)";
             document.getElementById(textName).style = "font-style: normal";
-            document.getElementById(textName).style.backgroundColor = "#00FF00";
+            document.getElementById(textName).style.backgroundColor = "#FFFFFF";
             questionChoiceArr.classname =0;
         }else{
             questionChoiceArr.classname =1;
             document.getElementById(classname).style.filter = "grayscale(0%)";
             document.getElementById(textName).style = "font-style: italic";
-            document.getElementById(textName).style.backgroundColor = "#FFFFFF";
+
+            document.getElementById(textName).style.backgroundColor = "#00FF00";
         }
         console.log(document.getElementById(classname).style.filter);
 
