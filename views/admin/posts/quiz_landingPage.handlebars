@@ -25,13 +25,16 @@
         <form action="/quiz" method="post" >
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="RLC_Circuit" id="checkbox1" value="RLC_Circuit"><label class="form-check-label" for="checkbox1">RLC circuit</label><br />
-                <input class="form-check-input" type="checkbox" name="ohmLaw" id="checkbox2" value="ohmLaw"><label class="form-check-label" for="checkbox2">Ohm's Law</label><br />
+                <input class="form-check-input" type="checkbox" name="ohmLaw" id="checkbox2" value="ohmLaw"><label class="form-check-label" for="checkbox2">
+                <img class="card-img-top" src="/pic/ohms_law.png" alt="">
+                Ohm's Law</label>
+                <br />
                 <input class="form-check-input" type="checkbox" name="filter" value="filter" id="checkbox3">
                 <label class="form-check-label" for="checkbox3">Filter</label><br />
                 <input class="form-check-input" type="checkbox" name="TEC" value="TEC" id="checkbox4"><label class="form-check-label" for="checkbox4">Thevenin Equivalent Circuit</label><br />
             </div>
             <div class="form-group">
-                <label for="questionNo"> Category</label>
+                <label for="questionNo"> Question number</label>
                 <select name="questionNo" id="questionNo" class="form-control">
                     <option value="5">5</option>
                     <option value="10">10</option>

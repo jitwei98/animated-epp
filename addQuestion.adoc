@@ -1,0 +1,56 @@
+:product_name : Documentation
+= Add question to the database
+:site-section: UserGuide
+:toc:
+:toc-title:
+:toc-placement: preamble
+:sectnums:
+:imagesDir: picture/excel
+:stylesDir: stylesheets
+:xrefstyle: full
+:experimental:
+:source-highlighter: highlightjs
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+endif::[]
+:repoURL: https://github.com/CS2113-AY1819S1-W12-4/main
+
+By: `LIU TIANHANG`      Since: `Sept 2019`      Licence: `MIT`
+
+// Use sentence case for long titles e.g. "Updating item details". capitalise first letter if it is a short title ////
+
+
+== Login
+
+. Click on the login button (_not the login(nus student)_)
+. Login with username as admin@gmail.com and password : 123
+. After login, admin button should appear on the header.
+. Click on the admin
+
+== set up question
+
+. On Admin page, there is a side bar that state question
+. Expand the question and click on All question (that is the question database)
+. Click on create question to add question
+. Enter the question in the question field.
+. Select the question category
+. If the answer is not whole number, select the Dp so that the randomised answer can be at the same dp.
+. Enter the correct answer(_cannot be 0 due to some bug(range for the randomised answer. If there is a request to solve it, it can be solved_)
+. The wrong answer can be leave blank or filled up.
+. If the wrong answer is blank, randomised helper will help to generate at each request. (*it means every student will get different wrong answer*)
+. Also, you can fill up the wrong answer so that every student get the same wrong answer.
+. Hint is to help the student. It will be shown after they submit the answer.
+. Image can be uploaded. It will be showed below the question and above the MCQ choices. (Currently, there is a limit to the database (500mb), so try not to upload too manny/ big size question. If there is a need, we can expand the database by paying lol...)
+. Logout after use.
+
+== delete the question
+
+Just click on the rubbish bin beside each question in the all question page.
+
+== View test
+
+. If you have not logout, please logout.
+. Click on thw quiz button on the header to test it.
+. Student is able to login from the login(nus student), so that they performance can be recorded and we can do some analysis.
+

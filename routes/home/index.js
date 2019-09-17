@@ -286,6 +286,6 @@ router.get('/auth/nus/return',(req,res,next)=>{
     function(req, res) {
         console.log(req.query["openid.sreg.fullname"]);
         // Successful authentication, redirect home.
-        res.redirect('/');
+        res.redirect('/quiz');
     });
 module.exports = router;
