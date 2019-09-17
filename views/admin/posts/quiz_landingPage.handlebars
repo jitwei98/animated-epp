@@ -64,12 +64,14 @@
     function backToColor(classname,textName) {
         if(questionChoiceArr.classname){
             document.getElementById(classname).style.filter = "grayscale(100%)";
-            document.getElementById(textName).style = "font-style: italic";
+            document.getElementById(textName).style = "font-style: normal";
+            document.getElementById(textName).style = "font-background-color: #00FF00";
             questionChoiceArr.classname =0;
         }else{
             questionChoiceArr.classname =1;
             document.getElementById(classname).style.filter = "grayscale(0%)";
-            document.getElementById(textName).style = "font-style: normal";
+            document.getElementById(textName).style = "font-style: italic";
+            document.getElementById(textName).style = "font-background-color: #FFFFFF";
         }
         console.log(document.getElementById(classname).style.filter);
 
