@@ -27,7 +27,7 @@
                 <input class="form-check-input" type="checkbox" name="RLC_Circuit" id="checkbox1" value="RLC_Circuit"><label class="form-check-label" for="checkbox1">RLC circuit</label><br />
                 <input class="form-check-input" type="checkbox" name="ohmLaw" id="checkbox2" value="ohmLaw"><label class="form-check-label" for="checkbox2">
                 <img class="card-title ohm" id="ohm" src="/pic/quiz_ohm.PNG" alt="" width="200" height="200"  style="filter: grayscale(100%);" onclick=backToColor("ohm"); >
-                Ohm's Law</label>
+                <figcaption>Ohm's Law</figcaption></label>
                 <br />
                 <input class="form-check-input" type="checkbox" name="filter" value="filter" id="checkbox3">
                 <label class="form-check-label" for="checkbox3">Filter</label><br />
@@ -47,14 +47,16 @@
     </div>
 </body>
 <script>
+    let questionChoiceArr = {};
     function backToColor(classname) {
-        console.log(document.getElementById(classname).style.filter);
-        if(document.getElementById(classname).style.filter == "grayscale(100%)"){
+        if(questionChoiceArr.classname){
             document.getElementById(classname).style.filter = "grayscale(0%)";
-        }
-        if(document.getElementById(classname).style.filter == "grayscale(0%)"){
+            questionChoiceArr.classname =0;
+        }else{
+            questionChoiceArr.classname =1;
             document.getElementById(classname).style.filter = "grayscale(100%)";
         }
+        console.log(document.getElementById(classname).style.filter);
 
     }
 </script>
