@@ -108,13 +108,12 @@
 
                             }
 
-                            console.log(document.getElementById(ID));
-                            console.log(mark);
                         }
                     }
                 },
 
             }).done(() => {
+                console.log("hiii");
                 showSlide(slides.length - 1);
                 document.getElementById('Mark').innerHTML = `Mark : ${mark}/ {{TotalMark}}`;
                 document.getElementById('Mark').style.display = "inline-block";
@@ -129,10 +128,6 @@
                 }
             }
         }
-</script>
-
-<script>
-
 
     function dynamicPage(){
         var out ="";
